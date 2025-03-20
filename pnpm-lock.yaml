@@ -1,0 +1,17 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: false
+  excludeLinksFromLockfile: false
+
+devDependencies:
+  commander:
+    specifier: ^13.1.0
+    version: 13.1.0
+
+packages:
+
+  /commander@13.1.0:
+    resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==}
+    engines: {node: '>=18'}
+    dev: true
