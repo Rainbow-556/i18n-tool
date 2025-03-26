@@ -4,14 +4,22 @@ settings:
   autoInstallPeers: false
   excludeLinksFromLockfile: false
 
-devDependencies:
+dependencies:
+  chalk:
+    specifier: ^5.4.1
+    version: 5.4.1
   commander:
     specifier: ^13.1.0
     version: 13.1.0
 
 packages:
 
+  /chalk@5.4.1:
+    resolution: {integrity: sha512-zgVZuo2WcZgfUEmsn6eO3kINexW8RAE4maiQ8QNs8CtpPCSyMiYsULR3HQYkm3w8FIA3SberyMJMSldGsW+U3w==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: false
+
   /commander@13.1.0:
     resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==}
     engines: {node: '>=18'}
-    dev: true
+    dev: false
