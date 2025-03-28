@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+# . "$(dirname -- "$0")/_/husky.sh"
+
+echo "------ pre-commit start ------"
+
+# node ./lib/getStagedFiles.js
+# 执行 i18n-tool 命令
+# npx i18n-tool extract-staged
+
+echo "------ pre-commit end ------"

@@ -6,9 +6,14 @@
   "bin": {
     "i18n-tool": "./bin/index.js"
   },
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky install .husky"
+  },
   "dependencies": {
     "chalk": "^5.4.1",
     "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
   }
 }
