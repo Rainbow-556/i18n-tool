@@ -31,8 +31,8 @@
 import { test } from "@/test";
 import { ref, computed } from "vue";
 // import HelloWorld from "./components/HelloWorld.vue";
-// import Vue2SyntaxView from "@/components/vue2SyntaxView.vue";
-import Vue2SyntaxView from "@test/lib/vue2SyntaxView.vue";
+import Vue2SyntaxView from "@/components/vue2SyntaxView.vue";
+// import Vue2SyntaxView from "@test/lib/vue2SyntaxView.vue";
 // import { useI18n } from "vue-i18n";
 
 const b = computed(() => {
