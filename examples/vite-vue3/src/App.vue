@@ -1,5 +1,5 @@
 <template>
-  <!-- <div>
+  <div>
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
@@ -7,7 +7,6 @@
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" /> -->
   <div>
     <img alt="你好" />
     <div>{{ hello }}</div>
@@ -28,10 +27,14 @@
 
 <script setup>
 // import { a } from "@/i18nPlugin";
-import { test } from "@/test";
-import { ref, computed } from "vue";
+import { test } from '@/test';
+import '@/json.json';
+import '@/ts.ts';
+import '@/jsx.jsx';
+import '@/tsx.tsx';
+import { ref, computed } from 'vue';
 // import HelloWorld from "./components/HelloWorld.vue";
-import Vue2SyntaxView from "@/components/vue2SyntaxView.vue";
+import Vue2SyntaxView from '@/components/vue2SyntaxView.vue';
 // import Vue2SyntaxView from "@test/lib/vue2SyntaxView.vue";
 // import { useI18n } from "vue-i18n";
 
@@ -43,9 +46,9 @@ const b = computed(() => {
 
 console.log(test);
 
-const world = "世界1";
-const world2 = ref("世界2");
-const hello = `${world}，世界${b.value}aaa${test.value ? "我+1" : "222"}`;
+const world = '世界1' + '世界2';
+const world2 = ref('世界2');
+const hello = `${world}，世界${b.value}aaa${test.value ? '我+1' : '222'}`;
 const hello2 = `${world}，世界${b.value}aaa`;
 // const hello3 = `${world}，世界${b}aaa${a}`;
 console.log(hello, hello2);

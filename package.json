@@ -1,7 +1,7 @@
 {
   "name": "@rainbow556/i18n-tool",
   "private": false,
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "type": "commonjs",
   "bin": {
     "i18n-tool": "./bin/index.js"
@@ -10,6 +10,9 @@
     "lib",
     "bin"
   ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
     "prepare": "husky"
   },
@@ -19,10 +22,16 @@
     "@babel/parser": "^7.26.9",
     "@babel/traverse": "^7.26.9",
     "@babel/types": "^7.26.9",
+    "@biomejs/biome": "^1.9.4",
+    "@biomejs/js-api": "^0.7.1",
+    "@biomejs/wasm-nodejs": "^1.9.4",
     "chalk": "^5.4.1",
-    "commander": "^13.1.0"
+    "commander": "^13.1.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-autofix": "^2.2.0",
+    "prettier": "^3.5.3"
   },
   "devDependencies": {
-    "husky": "^9.1.7"
+    "husky": "^8.0.3"
   }
 }
