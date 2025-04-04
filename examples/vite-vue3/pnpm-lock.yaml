@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@rainbow556/i18n-tool': 0.0.1-beta.4
+  '@rainbow556/i18n-tool': 0.0.1-beta.5
   '@vitejs/plugin-vue': ^5.2.1
   axios: ^1.8.1
   element-plus: ^2.9.5
@@ -21,7 +21,7 @@ dependencies:
   vue-router: 4.5.0_vue@3.5.13
 
 devDependencies:
-  '@rainbow556/i18n-tool': 0.0.1-beta.4
+  '@rainbow556/i18n-tool': 0.0.1-beta.5
   '@vitejs/plugin-vue': 5.2.3_vite@6.2.5+vue@3.5.13
   sass: 1.86.3
   vite: 6.2.5_sass@1.86.3
@@ -745,8 +745,8 @@ packages:
     dev: true
     optional: true
 
-  /@rainbow556/i18n-tool/0.0.1-beta.4:
-    resolution: {integrity: sha512-momKQUokJTMiiCz6CM7ueUwein8N4Ri/geMD7/fmt9dJyIL9ZuSxHdCaQvp7AzaD2up/41s9xSLQsOZsRQQ3wA==}
+  /@rainbow556/i18n-tool/0.0.1-beta.5:
+    resolution: {integrity: sha512-Uq1MU77AG9hV79pyTQVvpbr+2Mc0y1t/tIrkyF+OGuWVzSEXO+zaP8UtyexJD7C2I31aSyLJyJ7fzWnS7cQlZQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
