@@ -1,7 +1,7 @@
 {
   "name": "@rainbow556/i18n-tool",
   "private": false,
-  "version": "0.0.1-beta.3",
+  "version": "0.0.1-beta.4",
   "type": "commonjs",
   "bin": {
     "i18n-tool": "./bin/index.js"
@@ -14,7 +14,9 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "npm-login": "npm login --registry=https://registry.npmjs.org/",
+    "npm-publish": "npm publish --registry=https://registry.npmjs.org/"
   },
   "dependencies": {
     "@babel/core": "^7.26.9",
@@ -26,10 +28,7 @@
     "@biomejs/js-api": "^0.7.1",
     "@biomejs/wasm-nodejs": "^1.9.4",
     "chalk": "^5.4.1",
-    "commander": "^13.1.0",
-    "eslint": "^8.57.1",
-    "eslint-plugin-autofix": "^2.2.0",
-    "prettier": "^3.5.3"
+    "commander": "^13.1.0"
   },
   "devDependencies": {
     "husky": "^8.0.3"

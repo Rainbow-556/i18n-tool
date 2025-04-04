@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@rainbow556/i18n-tool': 0.0.1-beta.3
+  '@rainbow556/i18n-tool': 0.0.1-beta.4
   '@vitejs/plugin-vue': ^5.2.1
   axios: ^1.8.1
   element-plus: ^2.9.5
@@ -21,10 +21,10 @@ dependencies:
   vue-router: 4.5.0_vue@3.5.13
 
 devDependencies:
-  '@rainbow556/i18n-tool': 0.0.1-beta.3
+  '@rainbow556/i18n-tool': 0.0.1-beta.4
   '@vitejs/plugin-vue': 5.2.3_vite@6.2.5+vue@3.5.13
-  sass: 1.86.2
-  vite: 6.2.5_sass@1.86.2
+  sass: 1.86.3
+  vite: 6.2.5_sass@1.86.3
 
 packages:
 
@@ -269,6 +269,27 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@biomejs/js-api/0.7.1_@biomejs+wasm-nodejs@1.9.4:
+    resolution: {integrity: sha512-VFdgFFZWcyCQxZcAasyv8Enpexn4CblMdWmr6izLYHTLcbd+z9x/LuKU71qnmClABfnYqZjiY7c8DKTVri3Ajw==}
+    peerDependencies:
+      '@biomejs/wasm-bundler': ^1.9.2
+      '@biomejs/wasm-nodejs': ^1.9.2
+      '@biomejs/wasm-web': ^1.9.2
+    peerDependenciesMeta:
+      '@biomejs/wasm-bundler':
+        optional: true
+      '@biomejs/wasm-nodejs':
+        optional: true
+      '@biomejs/wasm-web':
+        optional: true
+    dependencies:
+      '@biomejs/wasm-nodejs': 1.9.4
+    dev: true
+
+  /@biomejs/wasm-nodejs/1.9.4:
+    resolution: {integrity: sha512-ZqNlhKcZW6MW1LxWIOfh9YVrBykvzyFad3bOh6JJFraDnNa3NXboRDiaI8dmrbb0ZHXCU1Tsq6WQsKV2Vpp5dw==}
+    dev: true
 
   /@ctrl/tinycolor/3.6.1:
     resolution: {integrity: sha512-SITSV6aIXsuVNV3f3O0f2n/cgyEDWoSqtZMYiAmcsYHydcKrOz3gUxB/iXd/Qf08+IZX4KpgNbvUdMBmWz+kcA==}
@@ -724,8 +745,8 @@ packages:
     dev: true
     optional: true
 
-  /@rainbow556/i18n-tool/0.0.1-beta.3:
-    resolution: {integrity: sha512-31r+LtRQZrUu4MmR7CXeZBVrGXzC0EwMrtQQmM9/OLe7FxdrdOaOzaIVMLkd5eRSy8aPAwF124auLHeyFN3MUA==}
+  /@rainbow556/i18n-tool/0.0.1-beta.4:
+    resolution: {integrity: sha512-momKQUokJTMiiCz6CM7ueUwein8N4Ri/geMD7/fmt9dJyIL9ZuSxHdCaQvp7AzaD2up/41s9xSLQsOZsRQQ3wA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -735,9 +756,13 @@ packages:
       '@babel/traverse': 7.27.0
       '@babel/types': 7.27.0
       '@biomejs/biome': 1.9.4
+      '@biomejs/js-api': 0.7.1_@biomejs+wasm-nodejs@1.9.4
+      '@biomejs/wasm-nodejs': 1.9.4
       chalk: 5.4.1
       commander: 13.1.0
     transitivePeerDependencies:
+      - '@biomejs/wasm-bundler'
+      - '@biomejs/wasm-web'
       - supports-color
     dev: true
 
@@ -941,7 +966,7 @@ packages:
       vite: ^5.0.0 || ^6.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 6.2.5_sass@1.86.2
+      vite: 6.2.5_sass@1.86.3
       vue: 3.5.13
     dev: true
 
@@ -1099,7 +1124,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001709
-      electron-to-chromium: 1.5.130
+      electron-to-chromium: 1.5.131
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3_browserslist@4.24.4
     dev: true
@@ -1191,8 +1216,8 @@ packages:
       gopd: 1.2.0
     dev: false
 
-  /electron-to-chromium/1.5.130:
-    resolution: {integrity: sha512-Ou2u7L9j2XLZbhqzyX0jWDj6gA8D3jIfVzt4rikLf3cGBa0VdReuFimBKS9tQJA4+XpeCxj1NoWlfBXzbMa9IA==}
+  /electron-to-chromium/1.5.131:
+    resolution: {integrity: sha512-fJFRYXVEJgDCiqFOgRGJm8XR97hZ13tw7FXI9k2yC5hgY+nyzC2tMO8baq1cQR7Ur58iCkASx2zrkZPZUnfzPg==}
     dev: true
 
   /element-plus/2.9.7_vue@3.5.13:
@@ -1607,8 +1632,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /sass/1.86.2:
-    resolution: {integrity: sha512-Rpfn0zAIDqvnSb2DihJTDFjbhqLHu91Wqac9rxontWk7R+2txcPjuujMqu1eeoezh5kAblVCS5EdFdyr0Jmu+w==}
+  /sass/1.86.3:
+    resolution: {integrity: sha512-iGtg8kus4GrsGLRDLRBRHY9dNVA78ZaS7xr01cWnS7PEMQyFtTqBiyCrfpTYTZXRWM94akzckYjh8oADfFNTzw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -1659,7 +1684,7 @@ packages:
       picocolors: 1.1.1
     dev: true
 
-  /vite/6.2.5_sass@1.86.2:
+  /vite/6.2.5_sass@1.86.3:
     resolution: {integrity: sha512-j023J/hCAa4pRIUH6J9HemwYfjB5llR2Ps0CWeikOtdR8+pAURAk0DoJC5/mm9kd+UgdnIy7d6HE4EAvlYhPhA==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
@@ -1702,7 +1727,7 @@ packages:
       esbuild: 0.25.2
       postcss: 8.5.3
       rollup: 4.39.0
-      sass: 1.86.2
+      sass: 1.86.3
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
