@@ -11,6 +11,7 @@ const generate = generatorPkg.default;
 
 // const fileContent = fs.readFileSync(path.resolve("./src/App.vue"), "utf-8");
 const fileContent = fs.readFileSync(path.resolve('./src/components/vue2SyntaxView.vue'), 'utf-8');
+// const fileContent = fs.readFileSync(path.resolve('./src/components/vue3TSSyntaxView.vue'), 'utf-8');
 const { descriptor } = parseVueSFC(fileContent);
 
 const { code: templateCode } = compileTemplate({
