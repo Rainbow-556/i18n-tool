@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const count = ref<number>(0);
+const count = ref<number>(1);
 const greeting = ref<string>("Hello Vue 3!");
 
 const increment = () => {

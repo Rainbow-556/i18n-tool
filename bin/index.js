@@ -8,9 +8,10 @@ const { version } = require('../package.json');
 // 添加 extract 命令
 program
   .command('extract')
+  .option('--staged', '仅提取git暂存区的文件中的词条')
   .description('提取翻译文本')
-  .action(() => {
-    extract();
+  .action(options => {
+    extract({ staged: options?.staged || false });
   });
 
 // 添加 -v显示版本号
