@@ -2,7 +2,7 @@
   <div>
     Vue2SyntaxView
     {{ src }}
-    <div>{{ computedB }}啊啊啊1</div>
+    <div>{{ computedB }}啊啊啊</div>
     <div>{{ `${computedB}好啊2` }}</div>
     <div>{{ methodB() }}</div>
   </div>
