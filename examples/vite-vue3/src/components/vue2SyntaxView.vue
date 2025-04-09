@@ -1,8 +1,8 @@
 <template>
   <div>
-    Vue2SyntaxView
+    Vue2SyntaxView你好
     {{ src }}
-    <div>{{ computedB }}啊啊啊</div>
+    <div>{{ computedB }}啊啊啊11</div>
     <div>{{ `${computedB}好啊2` }}</div>
     <div>{{ methodB() }}</div>
   </div>

@@ -1,9 +1,6 @@
 echo "------ pre-commit start ------"
 
-# node ./lib/getStagedFiles.js
 # 执行 i18n-tool 命令，cd - 回到上一级目录
-cd examples/vite-vue3 && pnpm i18n-tool extract && cd -
-# pnpm i18n-tool extract
-# npx i18n-tool extract
+# cd examples/vite-vue3 && pnpm i18n-tool extract && cd -
 
 echo "------ pre-commit end ------"
