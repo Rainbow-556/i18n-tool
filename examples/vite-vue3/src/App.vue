@@ -8,7 +8,7 @@
     </a>
   </div>
   <div>
-    <img alt="你好2" />
+    <img alt="你好" />
     <div>{{ hello }}</div>
     <div>{{ b }}</div>
     <div>{{ world2 }}</div>
@@ -48,6 +48,7 @@ console.log(test);
 
 const world = '世界1' + '世界2';
 const world2 = ref('世界2');
+const world3 = ref('世界2');
 const hello = `${world}，世界${b.value}aaa${test.value ? '我+1' : '222'}`;
 const hello2 = `${world}，世界${b.value}aaa`;
 // const hello3 = `${world}，世界${b}aaa${a}`;
