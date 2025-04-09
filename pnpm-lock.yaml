@@ -13,7 +13,7 @@ specifiers:
   '@vue/babel-plugin-jsx': ^1.4.0
   '@vue/babel-plugin-transform-vue-jsx': ^1.4.0
   '@vue/compiler-sfc': ^3.5.13
-  chalk: ^5.4.1
+  chalk: ^4.1.2
   commander: ^13.1.0
   husky: ^8.0.3
   micromatch: ^4.0.8
@@ -33,7 +33,7 @@ dependencies:
   '@vue/babel-plugin-jsx': 1.4.0_@babel+core@7.26.10
   '@vue/babel-plugin-transform-vue-jsx': 1.4.0_@babel+core@7.26.10
   '@vue/compiler-sfc': 3.5.13
-  chalk: 5.4.1
+  chalk: 4.1.2
   commander: 13.1.0
   micromatch: 4.0.8
   typescript: 5.8.2
@@ -580,6 +580,13 @@ packages:
     resolution: {integrity: sha512-/hnE/qP5ZoGpol0a5mDi45bOd7t3tjYJBjsgCsivow7D48cJeV5l05RD82lPqi7gRiphZM37rnhW1l6ZoCNNnQ==}
     dev: false
 
+  /ansi-styles/4.3.0:
+    resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
+    engines: {node: '>=8'}
+    dependencies:
+      color-convert: 2.0.1
+    dev: false
+
   /braces/3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
@@ -602,9 +609,23 @@ packages:
     resolution: {integrity: sha512-NgL3vUTnDrPCZ3zTahp4fsugQ4dc7EKTSzwQDPEel6DMoMnfH2jhry9n2Zm8onbSR+f/QtKHFOA+iAQu4kbtWA==}
     dev: false
 
-  /chalk/5.4.1:
-    resolution: {integrity: sha512-zgVZuo2WcZgfUEmsn6eO3kINexW8RAE4maiQ8QNs8CtpPCSyMiYsULR3HQYkm3w8FIA3SberyMJMSldGsW+U3w==}
-    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+  /chalk/4.1.2:
+    resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
+    engines: {node: '>=10'}
+    dependencies:
+      ansi-styles: 4.3.0
+      supports-color: 7.2.0
+    dev: false
+
+  /color-convert/2.0.1:
+    resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
+    engines: {node: '>=7.0.0'}
+    dependencies:
+      color-name: 1.1.4
+    dev: false
+
+  /color-name/1.1.4:
+    resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: false
 
   /commander/13.1.0:
@@ -665,6 +686,11 @@ packages:
   /globals/11.12.0:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
     engines: {node: '>=4'}
+    dev: false
+
+  /has-flag/4.0.0:
+    resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
+    engines: {node: '>=8'}
     dev: false
 
   /he/1.2.0:
@@ -768,6 +794,13 @@ packages:
   /source-map-js/1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /supports-color/7.2.0:
+    resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
+    engines: {node: '>=8'}
+    dependencies:
+      has-flag: 4.0.0
     dev: false
 
   /svg-tags/1.0.0:
