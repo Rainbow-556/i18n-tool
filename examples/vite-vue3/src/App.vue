@@ -15,6 +15,7 @@
     <Vue2SyntaxView :src="world2" />
   </div>
   <div>世界222</div>
+  <!-- <div v-html="html"></div> -->
   <div>{{ world }}你好56{{ world }}</div>
   <!-- <img :alt="world2" /> -->
   <!-- <el-button type="primary">你好</el-button> -->
@@ -43,6 +44,8 @@ import Vue2SyntaxView from '@/components/vue2SyntaxView.vue';
 const b = computed(() => {
   return `${test.value}中文1--------`;
 });
+
+// const html = /* i18n-tool-ignore-extract */ '<div>你好</div>';
 
 // const { t } = useI18n();
 
