@@ -36,10 +36,12 @@ import { ref, computed } from 'vue';
 // import HelloWorld from "./components/HelloWorld.vue";
 import Vue2SyntaxView from '@/components/vue2SyntaxView.vue';
 // import Vue2SyntaxView from "@test/lib/vue2SyntaxView.vue";
+// import { i18nFramework } from '@/i18n/index';
 // import { useI18n } from "vue-i18n";
 
+// console.log('i18nFramework', i18nFramework.t('hello', { p1: '占位' }));
 const b = computed(() => {
-  return `${test.value}中文2--------`;
+  return `${test.value}中文1--------`;
 });
 
 // const { t } = useI18n();
