@@ -14,7 +14,7 @@
     <div>{{ world2 }}</div>
     <Vue2SyntaxView :src="world2" />
   </div>
-  <div>世界222</div>
+  <div>世界22</div>
   <!-- <div v-html="html"></div> -->
   <div>{{ world }}你好56{{ world }}</div>
   <!-- <img :alt="world2" /> -->
