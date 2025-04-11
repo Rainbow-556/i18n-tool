@@ -1,4 +1,4 @@
-// 该文件自动生成的，勤务修改！！！
+// 该文件自动生成的，请勿修改！！！
 import i18n from './i18nFramework.js';
 import zh_CN_calibrated from './calibrated/zh-CN.json';
 import zh_CN_uncalibrated from './uncalibrated/zh-CN.json';

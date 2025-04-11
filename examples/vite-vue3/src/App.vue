@@ -29,7 +29,8 @@
 <script setup>
 // import { ttttt } from '@/i18n/index';
 import { test } from '@/test';
-import '@/json.json';
+import json2 from '@/test/json2.json';
+import json from '@/json.json';
 import '@/ts.ts';
 import '@/jsx.jsx';
 import '@/tsx.tsx';
@@ -50,9 +51,10 @@ const b = computed(() => {
 // const { t } = useI18n();
 
 console.log(test);
+console.log('json', json, json2);
 
 const world = '世界1' + '世界2';
-const world2 = ref('新的词条');
+const world2 = ref('新的词条1');
 const world3 = ref('世界2');
 const hello = `${world}，世界${b.value}aaa${test.value ? '我+1' : '222'}`;
 const hello2 = `${world}，世界${b.value}aaa`;
