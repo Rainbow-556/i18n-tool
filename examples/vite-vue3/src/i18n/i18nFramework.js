@@ -29,6 +29,13 @@ const i18nFramework = {
   },
   availableLocales() {
     return pluginInstance.global.availableLocales;
+  },
+  currentLocale() {
+    if (pluginInstance.mode === 'legacy') {
+      return pluginInstance.global.locale;
+    } else {
+      return pluginInstance.global.locale.value;
+    }
   }
 }
 

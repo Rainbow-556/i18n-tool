@@ -14,9 +14,10 @@
     <div>{{ world2 }}</div>
     <Vue2SyntaxView :src="world2" />
   </div>
-  <div>世界22</div>
+  <div>世界1</div>
   <!-- <div v-html="html"></div> -->
   <div>{{ world }}你好56{{ world }}</div>
+  <button @click="onSwitchBtnClick">切换语言</button>
   <!-- <img :alt="world2" /> -->
   <!-- <el-button type="primary">你好</el-button> -->
   <!-- <el-button type="primary">{{ world }}</el-button> -->
@@ -38,7 +39,7 @@ import { ref, computed } from 'vue';
 // import HelloWorld from "./components/HelloWorld.vue";
 import Vue2SyntaxView from '@/components/vue2SyntaxView.vue';
 // import Vue2SyntaxView from "@test/lib/vue2SyntaxView.vue";
-// import { i18nFramework } from '@/i18n/index';
+import { i18nFramework } from '@/i18n/index';
 // import { useI18n } from "vue-i18n";
 
 // console.log('i18nFramework', i18nFramework.t('hello', { p1: '占位' }));
@@ -60,6 +61,12 @@ const hello = `${world}，世界${b.value}aaa${test.value ? '我+1' : '222'}`;
 const hello2 = `${world}，世界${b.value}aaa`;
 // const hello3 = `${world}，世界${b}aaa${a}`;
 console.log(hello, hello2);
+
+function onSwitchBtnClick() {
+  const current = i18nFramework.currentLocale()
+  const list = i18nFramework.availableLocales()
+  i18nFramework.switchLocale(list.find(locale => locale !== current) || current); 
+}
 </script>
 
 <style scoped>
