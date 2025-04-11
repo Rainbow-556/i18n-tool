@@ -13,7 +13,7 @@ Object.keys(entryFromBuild).forEach(key => {
 console.log('entry from extract:', entryFromExtractKeys.length);
 console.log('entry from build:', Object.keys(entryFromBuild).length);
 
-console.log('missingEntry: ', missingEntry.length);
+console.log('missingEntry:', missingEntry.length);
 if (missingEntry.length > 0) {
   console.log(missingEntry);
 }
