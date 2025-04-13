@@ -56,7 +56,7 @@ console.log('json', json, json2);
 
 const world = '世界1' + '世界2';
 const world2 = ref('新的词条1');
-const world3 = ref('世界2');
+const world3 = ref('世界567');
 const hello = `${world}，世界${b.value}aaa${test.value ? '我+1' : '222'}`;
 const hello2 = `${world}，世界${b.value}aaa`;
 // const hello3 = `${world}，世界${b}aaa${a}`;

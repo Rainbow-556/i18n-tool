@@ -1,1 +1,1 @@
-export const test = { value: "嘿嘿嘿" };
+export const test = { value: '哦哦' };
