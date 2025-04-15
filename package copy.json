@@ -1,7 +1,7 @@
 {
-  "name": "@rainbow556/i18n-tool",
+  "name": "@abroad-middle/i18n-tool",
   "private": false,
-  "version": "0.0.1-beta.5",
+  "version": "0.0.1-beta.3",
   "type": "commonjs",
   "bin": {
     "i18n-tool": "./bin/index.js"
@@ -38,8 +38,11 @@
     "micromatch": "^4.0.8",
     "typescript": "^5.8.2"
   },
+  "optionalDependencies": {
+    "vue-template-compiler": "^2.6.0"
+  },
   "peerDependencies": {
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.0"
   },
   "devDependencies": {
     "husky": "^8.0.3"
