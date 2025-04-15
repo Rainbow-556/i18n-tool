@@ -1,4 +1,4 @@
-<script>
+<script lang="jsx">
 export default {
   name: 'MenuItem',
   functional: true,
@@ -17,7 +17,7 @@ export default {
     const vnodes = [];
 
     if (icon) {
-      vnodes.push(<svg-icon icon-class={icon}></svg-icon>);
+      vnodes.push(<svg-icon icon-class={icon}>来自vue2JSXView</svg-icon>);
     }
 
     if (title) {
@@ -25,5 +25,8 @@ export default {
     }
     return vnodes;
   }
+  // render(h, context) {
+  //   return <div>来自vue2JSXView</div>;
+  // }
 };
 </script>
