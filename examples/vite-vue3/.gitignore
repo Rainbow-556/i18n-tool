@@ -26,3 +26,4 @@ dist-ssr
 
 entryFromBuild.json
 entryFromExtract.json
+mockEntry.json

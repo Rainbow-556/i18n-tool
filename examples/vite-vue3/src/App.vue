@@ -8,7 +8,7 @@
     </a>
   </div>
   <div>
-    <img alt="你好2" />
+    <img alt="你好" />
     <div>{{ hello }}</div>
     <div>{{ b }}</div>
     <div>{{ world2 }}</div>
@@ -41,7 +41,7 @@ import Vue2SyntaxView from '@/components/vue2SyntaxView.vue';
 // import Vue2SyntaxView from "@test/lib/vue2SyntaxView.vue";
 import { i18nFramework } from '@/i18n/index';
 // import { useI18n } from "vue-i18n";
-import { baiduTranslator } from '@rainbow556/i18n-tool/lib/translator/baiduTranslator.mjs';
+// import { baiduTranslator } from '@rainbow556/i18n-tool/lib/translator/baiduTranslator.mjs';
 // console.log('i18nFramework', i18nFramework.t('hello', { p1: '占位' }));
 const b = computed(() => {
   return `${test.value}中文1--------`;
@@ -65,7 +65,9 @@ console.log(hello, hello2);
 function onSwitchBtnClick() {
   const current = i18nFramework.currentLocale();
   const list = i18nFramework.availableLocales();
-  i18nFramework.switchLocale(list.find(locale => locale !== current) || current);
+  const index = list.indexOf(current);
+  const next = index + 1 >= list.length ? 0 : index + 1;
+  i18nFramework.switchLocale(list[next], true);
   // baiduTranslator.translate('你好{p0}\n我很好\n你好hello\n Vue2SyntaxView你好 {p0} ');
 }
 </script>
