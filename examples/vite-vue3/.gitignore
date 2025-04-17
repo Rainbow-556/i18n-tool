@@ -27,3 +27,6 @@ dist-ssr
 entryFromBuild.json
 entryFromExtract.json
 mockEntry.json
+
+# i18n-tool的临时文件存放的目录
+i18nToolTemp

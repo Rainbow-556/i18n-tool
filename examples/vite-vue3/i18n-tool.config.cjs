@@ -1,11 +1,11 @@
 module.exports = {
-  originLang: 'zh-CN',
   // targetLangs: ['en-US', 'es-MX', 'id-ID'],
-  targetLangs: ['zh-CN', 'en-US', 'es-MX'],
+  targetLangs: ['en-US', 'zh-CN', 'id-ID'],
   i18nDir: 'src/i18n',
   i18nAlias: '@/i18n/index',
+  tempDir: 'i18nToolTemp',
   dirs: ['src'],
-  include: ['**/*.{js,cjs,mjs,json,vue}'],
-  // include: ['src/mockEntry.json'],
+  // include: ['**/*.{js,cjs,mjs,json,vue}'],
+  include: ['src/mockEntry.json'],
   exclude: ['node_modules/**']
 };

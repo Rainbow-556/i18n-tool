@@ -3,8 +3,8 @@ import { createI18n } from 'vue-i18n';
 
 const pluginInstance = createI18n({
   legacy: false,
-  locale: 'zh-CN',
-  fallbackLocale: 'zh-CN'
+  locale: 'en-US',
+  fallbackLocale: 'en-US'
 });
 
 const i18nFramework = {
