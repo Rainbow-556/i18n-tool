@@ -1,5 +1,5 @@
 const { defineConfig } = require('@vue/cli-service');
-const I18nToolWebpackPlugin = require('./i18nTool/i18nToolWebpackPlugin');
+const I18nToolWebpackPlugin = require('@rainbow556/i18n-tool/lib/webpack/i18nToolWebpackPlugin.cjs');
 
 module.exports = defineConfig({
   transpileDependencies: true,

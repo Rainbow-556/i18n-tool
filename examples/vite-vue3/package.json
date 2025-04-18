@@ -17,7 +17,7 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@rainbow556/i18n-tool": "0.0.1-beta.5",
+    "@rainbow556/i18n-tool": "0.0.1-beta.8",
     "@vitejs/plugin-vue": "^5.2.1",
     "sass": "^1.85.1",
     "vite": "^6.2.0"

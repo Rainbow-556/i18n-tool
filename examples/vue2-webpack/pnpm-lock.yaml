@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@rainbow556/i18n-tool': 0.0.1-beta.8
   '@vue/cli-plugin-babel': ~5.0.0
   '@vue/cli-plugin-router': ~5.0.0
   '@vue/cli-plugin-vuex': ~5.0.0
@@ -20,6 +21,7 @@ dependencies:
   vuex: 3.6.2_vue@2.6.14
 
 devDependencies:
+  '@rainbow556/i18n-tool': link:../..
   '@vue/cli-plugin-babel': 5.0.8_og5koz6ktzovsxfk3yoauuxs3e
   '@vue/cli-plugin-router': 5.0.8_@vue+cli-service@5.0.8
   '@vue/cli-plugin-vuex': 5.0.8_@vue+cli-service@5.0.8
