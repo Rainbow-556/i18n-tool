@@ -11,7 +11,15 @@
 </template>
 
 <script>
-import { test } from '@/test';
+// import '@/ts.ts';
+// import '@/jsx.jsx';
+// import '@/tsx.tsx';
+import '@/cjs.cjs';
+import '@/js.js';
+import '@/mjs.mjs';
+import json from '@/json.json';
+
+console.log('json', json);
 
 const text = '你好';
 
@@ -19,7 +27,7 @@ export default {
   name: 'App',
   data() {
     return {
-      msg: `数据${text}和${test}`,
+      msg: `数据${text}和${text}`,
       t: '头部' + text + '尾部'
     };
   }

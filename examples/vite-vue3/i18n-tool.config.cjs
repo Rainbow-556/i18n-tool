@@ -6,6 +6,7 @@ module.exports = {
   tempDir: 'i18nToolTemp',
   dirs: ['src'],
   // include: ['**/*.{js,cjs,mjs,json,vue}'],
+  // include: ['**/*.{js,cjs,mjs,json,vue,ts,tsx,jsx}'],
   include: ['src/mockEntry.json'],
   exclude: ['node_modules/**']
 };

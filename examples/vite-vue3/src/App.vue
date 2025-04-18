@@ -29,12 +29,13 @@
 
 <script setup>
 // import { ttttt } from '@/i18n/index';
-import { test } from '@/test';
-import json2 from '@/test/json2.json';
+// import '@/ts.ts';
+// import '@/jsx.jsx';
+// import '@/tsx.tsx';
+import '@/cjs.cjs';
+import '@/js.js';
+import '@/mjs.mjs';
 import json from '@/json.json';
-import '@/ts.ts';
-import '@/jsx.jsx';
-import '@/tsx.tsx';
 import { ref, computed } from 'vue';
 // import HelloWorld from "./components/HelloWorld.vue";
 import Vue2SyntaxView from '@/components/vue2SyntaxView.vue';
@@ -43,6 +44,7 @@ import { i18nFramework } from '@/i18n/index';
 // import { useI18n } from "vue-i18n";
 // import { baiduTranslator } from '@rainbow556/i18n-tool/lib/translator/baiduTranslator.mjs';
 // console.log('i18nFramework', i18nFramework.t('hello', { p1: '占位' }));
+const test = ref('123');
 const b = computed(() => {
   return `${test.value}中文1--------`;
 });
@@ -51,8 +53,7 @@ const b = computed(() => {
 
 // const { t } = useI18n();
 
-console.log(test);
-console.log('json', json, json2);
+console.log('json', json);
 
 const world = '世界1' + '世界2';
 const world2 = ref('新的词条1');
