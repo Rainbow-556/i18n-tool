@@ -2,6 +2,7 @@
   <div id="app">
     中文中文中文中文 <span>{{ `模板字符串${msg}` }}</span
     >英文
+    <div>{{ name }}</div>
     <!-- <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -11,15 +12,16 @@
 </template>
 
 <script>
-// import '@/ts.ts';
-// import '@/jsx.jsx';
-// import '@/tsx.tsx';
-import '@/cjs.cjs';
-import '@/js.js';
-import '@/mjs.mjs';
-import json from '@/json.json';
+// import '@/fileFormat/ts.ts';
+// import '@/fileFormat/jsx.jsx';
+// import '@/fileFormat/tsx.tsx';
+import { generateKey } from '@/fileFormat/cjs.cjs';
+import '@/fileFormat/js.js';
+import '@/fileFormat/mjs.mjs';
+import json from '@/fileFormat/json.json';
 
 console.log('json', json);
+generateKey();
 
 const text = '你好';
 
@@ -28,7 +30,8 @@ export default {
   data() {
     return {
       msg: `数据${text}和${text}`,
-      t: '头部' + text + '尾部'
+      t: '头部' + text + '尾部',
+      name: json[0].name
     };
   }
 };

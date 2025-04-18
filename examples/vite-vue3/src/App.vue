@@ -29,13 +29,13 @@
 
 <script setup>
 // import { ttttt } from '@/i18n/index';
-// import '@/ts.ts';
-// import '@/jsx.jsx';
-// import '@/tsx.tsx';
-import '@/cjs.cjs';
-import '@/js.js';
-import '@/mjs.mjs';
-import json from '@/json.json';
+// import '@/fileFormat/ts.ts';
+// import '@/fileFormat/jsx.jsx';
+// import '@/fileFormat/tsx.tsx';
+import '@/fileFormat/cjs.cjs';
+import '@/fileFormat/js.js';
+import '@/fileFormat/mjs.mjs';
+import json from '@/fileFormat/json.json';
 import { ref, computed } from 'vue';
 // import HelloWorld from "./components/HelloWorld.vue";
 import Vue2SyntaxView from '@/components/vue2SyntaxView.vue';
