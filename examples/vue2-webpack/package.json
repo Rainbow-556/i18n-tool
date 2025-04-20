@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "extract": "i18n-tool extract",
+    "extract-s": "i18n-tool extract --staged",
+    "stats": "i18n-tool stats"
   },
   "dependencies": {
     "core-js": "^3.8.3",
