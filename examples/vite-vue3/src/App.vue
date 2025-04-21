@@ -33,7 +33,7 @@
 // import '@/fileFormat/jsx.jsx';
 // import '@/fileFormat/tsx.tsx';
 // todo vite在dev时引用.cjs会报错，就算是未经过我的插件处理的.cjs文件也会报错，vite不允许在源码中使用require？但是build时不会报错，而且还能正常使用
-import { generateKey } from '@/fileFormat/cjs.cjs';
+// import { generateKey } from '@/fileFormat/cjs.cjs';
 import '@/fileFormat/js.js';
 import '@/fileFormat/mjs.mjs';
 import json from '@/fileFormat/json.json';
@@ -46,7 +46,7 @@ import { i18nFramework } from '@/i18n/index.js';
 // import { baiduTranslator } from '@rainbow556/i18n-tool/lib/translator/baiduTranslator.mjs';
 // console.log('i18nFramework', i18nFramework.t('hello', { p1: '占位' }));
 
-console.log('cjs run', generateKey('test'));
+// console.log('cjs run', generateKey('test'));
 
 const test = ref('123');
 const b = computed(() => {
