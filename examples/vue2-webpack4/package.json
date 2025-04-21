@@ -1,0 +1,32 @@
+{
+  "name": "vue2-webpack4",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "preview": "vue-cli-service build && http-server dist",
+    "inspect": "vue-cli-service inspect",
+    "extract": "i18n-tool extract",
+    "extract-s": "i18n-tool extract --staged",
+    "stats": "i18n-tool stats"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "2.6.10",
+    "vue-i18n": "^8.28.2",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@rainbow556/i18n-tool": "0.0.1-beta.8",
+    "@vue/cli-plugin-babel": "~4.5.19",
+    "@vue/cli-plugin-router": "~4.5.19",
+    "@vue/cli-plugin-vuex": "~4.5.19",
+    "@vue/cli-service": "~4.5.19",
+    "http-server": "^14.1.1",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "2.6.10"
+  }
+}
