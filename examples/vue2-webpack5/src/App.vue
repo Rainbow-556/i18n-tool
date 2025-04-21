@@ -3,7 +3,7 @@
     中文中文中文中文2
     <div>{{ `模板字符串${msg}` }}</div>
     英文
-    <div>{{ name }}</div>
+    <!-- <div>注释的内容-------</div> -->
     <div>{{ t }}</div>
     <!-- <nav>
       <router-link to="/">Home</router-link> |

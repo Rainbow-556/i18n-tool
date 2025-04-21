@@ -10,6 +10,7 @@ export default defineConfig({
     vue({
       template: {
         compilerOptions: {
+          // 不保留template中的注释，否则会导致i18n-tool做冗余的词条提取
           comments: false
         }
       }

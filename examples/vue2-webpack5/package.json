@@ -6,6 +6,7 @@
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "preview": "vue-cli-service build && http-server dist",
+    "inspect": "vue-cli-service inspect",
     "extract": "i18n-tool extract",
     "extract-s": "i18n-tool extract --staged",
     "stats": "i18n-tool stats"
