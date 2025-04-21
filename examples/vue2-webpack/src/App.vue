@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    中文中文中文中文 <span>{{ `模板字符串${msg}` }}</span
-    >英文
+    中文中文中文中文2
+    <div>{{ `模板字符串${msg}` }}</div>
+    英文
     <div>{{ name }}</div>
+    <div>{{ t }}</div>
     <!-- <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
     <router-view/> -->
+    <button @click="onSwitchBtnClick">切换语言</button>
   </div>
 </template>
 
@@ -19,9 +22,10 @@ import { generateKey } from '@/fileFormat/cjs.cjs';
 import '@/fileFormat/js.js';
 import '@/fileFormat/mjs.mjs';
 import json from '@/fileFormat/json.json';
+import { i18nFramework } from '@/i18n/index.js';
 
 console.log('json', json);
-generateKey();
+console.log('cjs的generateKey', generateKey('generateKey'));
 
 const text = '你好';
 
@@ -33,6 +37,15 @@ export default {
       t: '头部' + text + '尾部',
       name: json[0].name
     };
+  },
+  methods: {
+    onSwitchBtnClick() {
+      const current = i18nFramework.currentLocale();
+      const list = i18nFramework.availableLocales();
+      const index = list.indexOf(current);
+      const next = index + 1 >= list.length ? 0 : index + 1;
+      i18nFramework.switchLocale(list[next], true);
+    }
   }
 };
 </script>

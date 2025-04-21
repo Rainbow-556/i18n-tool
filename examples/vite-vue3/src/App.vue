@@ -41,7 +41,7 @@ import { ref, computed } from 'vue';
 // import HelloWorld from "./components/HelloWorld.vue";
 import Vue2SyntaxView from '@/components/vue2SyntaxView.vue';
 // import Vue2SyntaxView from "@test/lib/vue2SyntaxView.vue";
-import { i18nFramework } from '@/i18n/index';
+import { i18nFramework } from '@/i18n/index.js';
 // import { useI18n } from "vue-i18n";
 // import { baiduTranslator } from '@rainbow556/i18n-tool/lib/translator/baiduTranslator.mjs';
 // console.log('i18nFramework', i18nFramework.t('hello', { p1: '占位' }));
