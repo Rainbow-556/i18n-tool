@@ -1,8 +1,9 @@
 {
-  "f611e8999ba780ba65bd5f272253f886": "From. cjs {p0}",
   "b1e3a7176fe2dc87801ec157684db037": "{p0} from. js {p1}",
   "b5f7e00a2a85e8414929b332e5bc0bb2": "From. json",
   "ecbff9e2f9776daaf1c8533c4ff16d2e": "From. mjs {p0}",
   "2d692f7ad84d6d58a593f2dab1384a92": "Chinese Chinese Chinese 2",
-  "f19cc4345b6f28d3282af680e8fe5bd1": "switch language"
+  "f19cc4345b6f28d3282af680e8fe5bd1": "switch language",
+  "46c68f4038b0721fe1b7a706ef09135b": "The generateKey of cjs",
+  "fa014d465b321f70bcada72f034c248f": "From. cjs a= {p0}str {p1}"
 }

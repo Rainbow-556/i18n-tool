@@ -1,8 +1,9 @@
 {
-  "f611e8999ba780ba65bd5f272253f886": "来自.cjs{p0}",
   "b1e3a7176fe2dc87801ec157684db037": "{p0}来自.js{p1}",
   "b5f7e00a2a85e8414929b332e5bc0bb2": "来自.json",
   "ecbff9e2f9776daaf1c8533c4ff16d2e": "来自.mjs{p0}",
   "2d692f7ad84d6d58a593f2dab1384a92": "中文中文中文中文2",
-  "f19cc4345b6f28d3282af680e8fe5bd1": "切换语言"
+  "f19cc4345b6f28d3282af680e8fe5bd1": "切换语言",
+  "46c68f4038b0721fe1b7a706ef09135b": "cjs的generateKey",
+  "fa014d465b321f70bcada72f034c248f": "来自.cjs a={p0}str{p1}"
 }
