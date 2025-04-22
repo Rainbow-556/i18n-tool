@@ -5,12 +5,12 @@
     英文
     <!-- <div>注释的内容-------</div> -->
     <div>{{ t }}</div>
-    <!-- <nav>
+    <button @click="onSwitchBtnClick">切换语言c</button>
+    <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
-    <router-view/> -->
-    <button @click="onSwitchBtnClick">切换语言c</button>
+    <router-view />
   </div>
 </template>
 
