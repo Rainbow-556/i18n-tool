@@ -6,6 +6,6 @@ module.exports = {
     plugins: [new I18nToolWebpackPlugin()]
   },
   devServer: {
-    port: 8082
+    port: 8080
   }
 };

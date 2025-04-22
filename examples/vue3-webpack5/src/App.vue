@@ -1,17 +1,17 @@
 <template>
-  <!-- <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view /> -->
   <div>
     中文中文中文中文2
     <div>{{ `模板字符串${msg}` }}</div>
     英文
     <div>{{ t }}</div>
+    <!-- <div>注释的内容-------</div> -->
     <button @click="onSwitchBtnClick">切换语言</button>
   </div>
-  <!-- <div>注释的内容-------</div> -->
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </nav>
+  <router-view />
 </template>
 
 <script setup>
@@ -25,7 +25,7 @@ import '@/fileFormat/mjs.mjs';
 import json from '@/fileFormat/json.json';
 import { i18nFramework } from '@/i18n/index.js';
 
-console.log('json', json);
+console.log('json', json[0]);
 console.log('cjs的generateKey', generateKey('generateKey'));
 
 const text = '你好';
