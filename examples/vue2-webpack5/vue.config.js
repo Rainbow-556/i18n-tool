@@ -5,5 +5,8 @@ module.exports = defineConfig({
   transpileDependencies: true,
   configureWebpack: {
     plugins: [new I18nToolWebpackPlugin()]
+  },
+  devServer: {
+    port: 8080
   }
 });

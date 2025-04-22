@@ -9,7 +9,9 @@
     "inspect": "vue-cli-service inspect",
     "extract": "i18n-tool extract",
     "extract-s": "i18n-tool extract --staged",
-    "stats": "i18n-tool stats"
+    "stats": "i18n-tool stats",
+    "gen": "i18n-tool gen-uncalibrated-file",
+    "merge": "i18n-tool merge-calibrated-file"
   },
   "dependencies": {
     "core-js": "^3.8.3",
