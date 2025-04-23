@@ -5,7 +5,7 @@ import store from './store';
 import { i18nFramework } from '@/i18n/index.js';
 
 Vue.config.productionTip = false;
-
+console.log(`当前语言：${i18nFramework.currentLanguage}`);
 new Vue({
   router,
   store,

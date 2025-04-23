@@ -10,7 +10,7 @@
     <div>{{ t2 }}</div>
     <div>{{ envText }}</div>
     <div>{{ envText2 }}</div>
-    <button @click="onSwitchBtnClick">切换语言c</button>
+    <button @click="onSwitchBtnClick">切换语言a</button>
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>

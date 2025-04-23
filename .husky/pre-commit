@@ -1,6 +1,16 @@
 echo "------ pre-commit start ------"
-
-# 执行 i18n-tool 命令，cd - 回到上一级目录
-# cd examples/vite-vue3 && pnpm i18n-tool extract && cd -
+  
+# 执行 i18n-tool extract --staged 命令，cd - 回到上一级目录
+EXTRACT_COMMAND="cd examples/vue2-webpack4 && pnpm i18n-tool extract --staged && cd -"
+# 执行命令
+eval "$EXTRACT_COMMAND"
+# 捕获命令的退出码
+EXTRACT_COMMAND_EXIT_CODE=$?
+# 检查命令的退出码，非0表示命令执行失败，中断commit
+if [ $EXTRACT_COMMAND_EXIT_CODE -ne 0 ]; then
+  exit 1
+else
+  echo ""
+fi
 
 echo "------ pre-commit end ------"
