@@ -1,10 +1,15 @@
 <template>
   <div id="app">
     中文中文中文中文2
+
+    {{ msg }}
     <div>{{ `模板字符串${msg}` }}</div>
-    英文
+    英文 中文
     <!-- <div>注释的内容-------</div> -->
     <div>{{ t }}</div>
+    <div>{{ t2 }}</div>
+    <div>{{ envText }}</div>
+    <div>{{ envText2 }}</div>
     <button @click="onSwitchBtnClick">切换语言c</button>
     <nav>
       <router-link to="/">Home</router-link> |
@@ -35,7 +40,10 @@ export default {
     return {
       msg: `数据${text}和${text}`,
       t: '头部' + text + '尾部',
-      name: json[0].name
+      name: json[0].name,
+      t2: `文案`,
+      envText: `环境变量${process.env.VUE_APP_TEXT}`,
+      envText2: `${process.env.VUE_APP_TEXT}`
     };
   },
   methods: {
