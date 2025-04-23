@@ -4,14 +4,14 @@
   "5f2d66d99b37a6d869c6b2f5d86102fc": "English Chinese",
   "3d5017ef344da289b6ad3670efd170b1": "Switch language a",
   "46c68f4038b0721fe1b7a706ef09135b": "The generateKey of cjs",
-  "7eca689f0d3389d9dea66ae112e5cfd7": "hello",
   "08c51326bb75810ac77b9f7707453674": "Data {p0} and {p1}",
   "0f481397f36836c17e01c47429088830": "Head {p0} Tail",
-  "f4b06bd9e4f5ceaac7fbb0e17fffc518": "Copywriting",
   "81125bd228283891d0afce91e9a96a39": "Environment variable {p0}",
   "fa014d465b321f70bcada72f034c248f": "From. cjs a= {p0}str {p1}",
   "b1e3a7176fe2dc87801ec157684db037": "{p0} from. js {p1}",
   "b5f7e00a2a85e8414929b332e5bc0bb2": "From. json",
   "ecbff9e2f9776daaf1c8533c4ff16d2e": "From. mjs {p0}",
-  "4baad04b1de629553d9e69935d083117": "Current language: {p0}"
+  "4baad04b1de629553d9e69935d083117": "Current language: {p0}",
+  "fda17c3dba112b56698e0bd590973818": "Hello 2",
+  "4b5e86a17e0198fbf2f19b4a56b139df": "Copywriting 2"
 }

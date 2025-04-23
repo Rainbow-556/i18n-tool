@@ -32,7 +32,7 @@ import { i18nFramework } from '@/i18n/index.js';
 console.log('json', json);
 console.log('cjs的generateKey', generateKey('generateKey'));
 
-const text = '你好';
+const text = '你好2';
 
 export default {
   name: 'App',
@@ -41,7 +41,7 @@ export default {
       msg: `数据${text}和${text}`,
       t: '头部' + text + '尾部',
       name: json[0].name,
-      t2: `文案`,
+      t2: `文案2`,
       envText: `环境变量${process.env.VUE_APP_TEXT}`,
       envText2: `${process.env.VUE_APP_TEXT}`
     };
