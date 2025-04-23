@@ -1,11 +1,1 @@
-{
-  "7d648b374134d2f2735fdf3898657346": "Template string {p0}",
-  "46c68f4038b0721fe1b7a706ef09135b": "The generateKey of cjs",
-  "7eca689f0d3389d9dea66ae112e5cfd7": "hello",
-  "08c51326bb75810ac77b9f7707453674": "Data {p0} and {p1}",
-  "0f481397f36836c17e01c47429088830": "Head {p0} Tail",
-  "fa014d465b321f70bcada72f034c248f": "From. cjs a= {p0}str {p1}",
-  "b1e3a7176fe2dc87801ec157684db037": "{p0} from. js {p1}",
-  "b5f7e00a2a85e8414929b332e5bc0bb2": "From. json",
-  "ecbff9e2f9776daaf1c8533c4ff16d2e": "From. mjs {p0}"
-}
+{}
