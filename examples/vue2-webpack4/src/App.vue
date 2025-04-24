@@ -38,7 +38,7 @@ console.log('json', json);
 console.log('FakeJson', FakeJson);
 console.log('cjs的generateKey', generateKey('generateKey'));
 
-const text = '你好';
+const text = '你好2';
 
 export default {
   name: 'App',

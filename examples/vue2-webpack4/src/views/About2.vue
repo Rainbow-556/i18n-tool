@@ -6,7 +6,7 @@
 
 <script>
 import('@/fileFormat/json.json').then(json => console.log('about.vue json', json.default[0]));
-console.log('新的模块2');
+console.log('新的模块3');
 
 export default {
   name: 'About'
