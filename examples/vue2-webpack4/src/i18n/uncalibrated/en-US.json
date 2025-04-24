@@ -2,7 +2,6 @@
   "846d79ea71304e68c2c6cf48a8ad8028": "Chinese Chinese Chinese 2 {p0}",
   "7d648b374134d2f2735fdf3898657346": "Template string {p0}",
   "5f2d66d99b37a6d869c6b2f5d86102fc": "English Chinese",
-  "3d5017ef344da289b6ad3670efd170b1": "Switch language a",
   "46c68f4038b0721fe1b7a706ef09135b": "The generateKey of cjs",
   "08c51326bb75810ac77b9f7707453674": "Data {p0} and {p1}",
   "0f481397f36836c17e01c47429088830": "Head {p0} Tail",
@@ -14,5 +13,10 @@
   "4baad04b1de629553d9e69935d083117": "Current language: {p0}",
   "4b5e86a17e0198fbf2f19b4a56b139df": "Copywriting 2",
   "e7cf4161bdcd54f7cd9e03a20ba3ba68": "New Module 2",
-  "7eca689f0d3389d9dea66ae112e5cfd7": "hello"
+  "7eca689f0d3389d9dea66ae112e5cfd7": "hello",
+  "f19cc4345b6f28d3282af680e8fe5bd1": "switch language",
+  "7dff31b4bf8162e38ba1ca6148113e9e": "Text from fake.json",
+  "ada52ab02713df567068cd65526e7026": "Components from Fake",
+  "f6da36b54ab04addfe0435f8753d5ebe": "Fake's message",
+  "97d9ccfa511ca67c9c26b078313294df": "Fake's created hook"
 }

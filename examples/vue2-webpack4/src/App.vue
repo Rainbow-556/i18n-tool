@@ -10,7 +10,8 @@
     <div>{{ t2 }}</div>
     <div>{{ envText }}</div>
     <div>{{ envText2 }}</div>
-    <button @click="onSwitchBtnClick">切换语言a</button>
+    <Fake />
+    <button @click="onSwitchBtnClick">切换语言</button>
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -28,14 +29,20 @@ import '@/fileFormat/js.js';
 import '@/fileFormat/mjs.mjs';
 import json from '@/fileFormat/json.json';
 import { i18nFramework } from '@/i18n/index.js';
+import Fake from '@fake-npm/lib/fake.vue';
+import FakeJson from '@fake-npm/lib/fake.json';
 
 console.log('json', json);
+console.log('FakeJson', FakeJson);
 console.log('cjs的generateKey', generateKey('generateKey'));
 
 const text = '你好';
 
 export default {
   name: 'App',
+  components: {
+    Fake
+  },
   data() {
     return {
       msg: `数据${text}和${text}`,

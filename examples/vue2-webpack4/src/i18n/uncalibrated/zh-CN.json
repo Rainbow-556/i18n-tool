@@ -2,7 +2,6 @@
   "846d79ea71304e68c2c6cf48a8ad8028": "中文中文中文中文2 {p0}",
   "7d648b374134d2f2735fdf3898657346": "模板字符串{p0}",
   "5f2d66d99b37a6d869c6b2f5d86102fc": "英文 中文",
-  "3d5017ef344da289b6ad3670efd170b1": "切换语言a",
   "46c68f4038b0721fe1b7a706ef09135b": "cjs的generateKey",
   "08c51326bb75810ac77b9f7707453674": "数据{p0}和{p1}",
   "0f481397f36836c17e01c47429088830": "头部{p0}尾部",
@@ -14,5 +13,10 @@
   "4baad04b1de629553d9e69935d083117": "当前语言：{p0}",
   "4b5e86a17e0198fbf2f19b4a56b139df": "文案2",
   "e7cf4161bdcd54f7cd9e03a20ba3ba68": "新的模块2",
-  "7eca689f0d3389d9dea66ae112e5cfd7": "你好"
+  "7eca689f0d3389d9dea66ae112e5cfd7": "你好",
+  "f19cc4345b6f28d3282af680e8fe5bd1": "切换语言",
+  "7dff31b4bf8162e38ba1ca6148113e9e": "来自fake.json的文本",
+  "ada52ab02713df567068cd65526e7026": "来自fake的组件",
+  "f6da36b54ab04addfe0435f8753d5ebe": "fake的消息",
+  "97d9ccfa511ca67c9c26b078313294df": "fake的created钩子"
 }
