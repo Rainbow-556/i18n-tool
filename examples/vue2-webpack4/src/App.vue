@@ -32,7 +32,7 @@ import { i18nFramework } from '@/i18n/index.js';
 console.log('json', json);
 console.log('cjs的generateKey', generateKey('generateKey'));
 
-const text = '你好2';
+const text = '你好';
 
 export default {
   name: 'App',
