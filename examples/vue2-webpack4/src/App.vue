@@ -10,6 +10,7 @@
     <div>{{ t2 }}</div>
     <div>{{ envText }}</div>
     <div>{{ envText2 }}</div>
+    <div>{{ /* i18n-tool-extract-ignored */ '忽略提取的变量' }}</div>
     <Fake />
     <IndependentBlock />
     <button @click="onSwitchBtnClick">切换语言</button>
@@ -38,7 +39,8 @@ console.log('json', json);
 console.log('FakeJson', FakeJson);
 console.log('cjs的generateKey', generateKey('generateKey'));
 
-const text = '你好2';
+const text = /* i18n-tool-extract-ignored */ '忽略提取的字符串';
+const text2 = /* i18n-tool-extract-ignored */ `忽略提取模板字符串`;
 
 export default {
   name: 'App',
@@ -48,7 +50,7 @@ export default {
   },
   data() {
     return {
-      msg: `数据${text}和${text}`,
+      msg: `数据${text}和${text2}`,
       t: '头部' + text + '尾部',
       name: json[0].name,
       t2: `文案2`,
