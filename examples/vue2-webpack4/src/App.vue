@@ -3,7 +3,7 @@
     中文中文中文中文2
 
     {{ msg }}
-    <div>{{ `模板字符串${msg}` }}</div>
+    <div class="css-var">{{ `模板字符串${msg}` }}</div>
     英文 中文
     <!-- <div>注释的内容-------</div> -->
     <div>{{ t }}</div>
@@ -11,6 +11,7 @@
     <div>{{ envText }}</div>
     <div>{{ envText2 }}</div>
     <Fake />
+    <IndependentBlock />
     <button @click="onSwitchBtnClick">切换语言</button>
     <nav>
       <router-link to="/">Home</router-link> |
@@ -31,6 +32,7 @@ import json from '@/fileFormat/json.json';
 import { i18nFramework } from '@/i18n/index.js';
 import Fake from '@fake-npm/lib/fake.vue';
 import FakeJson from '@fake-npm/lib/fake.json';
+import IndependentBlock from './components/independentBlock/index.vue';
 
 console.log('json', json);
 console.log('FakeJson', FakeJson);
@@ -41,7 +43,8 @@ const text = '你好';
 export default {
   name: 'App',
   components: {
-    Fake
+    Fake,
+    IndependentBlock
   },
   data() {
     return {
@@ -72,6 +75,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.css-var {
+  color: var(--my-color);
+  position: relative;
+  &::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: blue;
+    content: var(--my-content);
+  }
 }
 
 #nav {

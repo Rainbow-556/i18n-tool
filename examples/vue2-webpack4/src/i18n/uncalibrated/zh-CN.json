@@ -18,5 +18,7 @@
   "7dff31b4bf8162e38ba1ca6148113e9e": "来自fake.json的文本",
   "ada52ab02713df567068cd65526e7026": "来自fake的组件",
   "f6da36b54ab04addfe0435f8753d5ebe": "fake的消息",
-  "97d9ccfa511ca67c9c26b078313294df": "fake的created钩子"
+  "97d9ccfa511ca67c9c26b078313294df": "fake的created钩子",
+  "1b4d72e7cd185793fb9edcea4417c920": "独立的块",
+  "dd76a8584cd943ac43c1beeb715c0e63": "独立的块IndependentBlock created"
 }
