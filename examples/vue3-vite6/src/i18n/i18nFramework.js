@@ -12,10 +12,14 @@ const i18nFramework = {
   t(...args) {
     return pluginInstance.global.t(...args);
   },
-  addLocale(locale, langPack) {
+  addLocale({ locale, langPack }) {
     pluginInstance.global.setLocaleMessage(locale, langPack);
   },
-  switchLocale(locale, reload = true) {
+  switchLocale({ locale, reload }) {
+    const currentLocale = this.currentLocale();
+    if (currentLocale === locale) {
+      return;
+    }
     localStorage.setItem('i18n-tool-locale', locale);
     if (reload) {
       window.location.reload();
@@ -28,7 +32,8 @@ const i18nFramework = {
     }
   },
   availableLocales() {
-    return pluginInstance.global.availableLocales;
+    // pluginInstance.global.availableLocales是根据词法排序，此处返回i18n-tool.config.cjs中runtimeTargetLangs的顺序，保持一致
+    return ['en-US', 'zh-CN'];
   },
   currentLocale() {
     if (pluginInstance.mode === 'legacy') {

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div>current lang: {{ currentLang }}</div>
     中文中文中文中文2
 
     {{ msg }}
@@ -13,7 +14,7 @@
     <div>{{ /* i18n-tool-extract-ignored */ '忽略提取的变量' }}</div>
     <Fake />
     <IndependentBlock />
-    <button @click="onSwitchBtnClick">切换语言</button>
+    <button v-for="lang in langs" :key="lang" @click="onSwitchBtnClick(lang)">切换{{ lang }}</button>
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -55,16 +56,14 @@ export default {
       name: json[0].name,
       t2: `文案2`,
       envText: `环境变量${process.env.VUE_APP_TEXT}`,
-      envText2: `${process.env.VUE_APP_TEXT}`
+      envText2: `${process.env.VUE_APP_TEXT}`,
+      langs: i18nFramework.availableLocales(),
+      currentLang: i18nFramework.currentLocale()
     };
   },
   methods: {
-    onSwitchBtnClick() {
-      const current = i18nFramework.currentLocale();
-      const list = i18nFramework.availableLocales();
-      const index = list.indexOf(current);
-      const next = index + 1 >= list.length ? 0 : index + 1;
-      i18nFramework.switchLocale(list[next], true);
+    onSwitchBtnClick(lang) {
+      i18nFramework.switchLocale({ locale: lang, reload: true });
     }
   }
 };

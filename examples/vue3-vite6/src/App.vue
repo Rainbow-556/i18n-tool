@@ -72,7 +72,7 @@ function onSwitchBtnClick() {
   const list = i18nFramework.availableLocales();
   const index = list.indexOf(current);
   const next = index + 1 >= list.length ? 0 : index + 1;
-  i18nFramework.switchLocale(list[next], true);
+  i18nFramework.switchLocale({ locale: list[next], reload: true });
   // baiduTranslator.translate('你好{p0}\n我很好\n你好hello\n Vue2SyntaxView你好 {p0} ');
 }
 </script>

@@ -5,8 +5,8 @@ import VueI18n from 'vue-i18n';
 Vue.use(VueI18n);
 
 const pluginInstance = new VueI18n({
-  locale: 'en-US',
-  fallbackLocale: 'en-US'
+  locale: 'zh-CN',
+  fallbackLocale: 'zh-CN'
 });
 
 const i18nFramework = {
@@ -14,10 +14,14 @@ const i18nFramework = {
   t(...args) {
     return pluginInstance.t(...args);
   },
-  addLocale(locale, langPack) {
+  addLocale({ locale, langPack }) {
     pluginInstance.setLocaleMessage(locale, langPack);
   },
-  switchLocale(locale, reload = true) {
+  switchLocale({ locale, reload }) {
+    const currentLocale = this.currentLocale();
+    if (currentLocale === locale) {
+      return;
+    }
     localStorage.setItem('i18n-tool-locale', locale);
     if (reload) {
       window.location.reload();
@@ -26,7 +30,8 @@ const i18nFramework = {
     }
   },
   availableLocales() {
-    return pluginInstance.availableLocales;
+    // pluginInstance.availableLocales是根据词法排序，此处返回i18n-tool.config.cjs中runtimeTargetLangs的顺序，保持一致
+    return ['zh-CN', 'en-US'];
   },
   currentLocale() {
     return pluginInstance.locale;

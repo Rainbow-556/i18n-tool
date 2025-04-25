@@ -1,6 +1,7 @@
 module.exports = {
   // targetLangs: ['en-US', 'es-MX', 'id-ID'],
   targetLangs: ['en-US', 'zh-CN'],
+  runtimeTargetLangs: (process.env.I18N_RUNTIME_TARGET_LANGS && process.env.I18N_RUNTIME_TARGET_LANGS.split(',')) || [],
   i18nDir: 'src/i18n',
   i18nAlias: '@/i18n/index.js',
   tempDir: 'i18nToolTemp',

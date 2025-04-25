@@ -5,14 +5,10 @@ import store from './store';
 import { i18nFramework } from '@/i18n/index.js';
 
 Vue.config.productionTip = false;
+console.log(`当前语言：${i18nFramework.currentLanguage}`);
 new Vue({
   router,
   store,
   i18n: i18nFramework.i18nInstance,
   render: h => h(App)
 }).$mount('#app');
-
-// initI18n().then(() => {
-//   console.log('i18nFramework 初始化完成');
-//   import('./originMain.js');
-// });
