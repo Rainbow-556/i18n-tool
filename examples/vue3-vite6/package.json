@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node ./build/dev.cjs",
+    "dev2": "cross-env COUNTRY=zh vite",
     "build": "vite build",
     "preview": "vite preview",
     "extract": "i18n-tool extract",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@rainbow556/i18n-tool": "0.0.1-beta.8",
     "@vitejs/plugin-vue": "^5.2.1",
+    "cross-env": "^7.0.3",
     "sass": "^1.85.1",
     "vite": "^6.2.0"
   }

@@ -6,6 +6,11 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
+  define: {
+    stringVal: JSON.stringify('v1.0.0'),
+    numberVal: JSON.stringify(1),
+    objectVal: JSON.stringify({ a: 1 })
+  },
   plugins: [
     vue({
       template: {
