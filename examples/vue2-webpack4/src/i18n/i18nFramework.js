@@ -1,12 +1,11 @@
-
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 
 Vue.use(VueI18n);
 
 const pluginInstance = new VueI18n({
-  locale: 'en-US',
-  fallbackLocale: 'en-US'
+  locale: 'zh-CN',
+  fallbackLocale: 'zh-CN'
 });
 
 const i18nFramework = {
@@ -31,11 +30,23 @@ const i18nFramework = {
   },
   availableLocales() {
     // pluginInstance.availableLocales是根据词法排序，此处返回i18n-tool.config.cjs中runtimeTargetLangConfig的顺序，保持一致
-    return ['en-US', 'zh-CN'];
+    return ['zh-CN', 'en-US'];
   },
   currentLocale() {
     return pluginInstance.locale;
   }
-}
+};
 
 export default i18nFramework;
+
+export function createI18nWrapper({ locale, fallbackLocale }) {
+  return {
+    instance: new VueI18n({
+      locale,
+      fallbackLocale
+    }),
+    t(...args) {
+      return this.instance.t(...args);
+    }
+  };
+}

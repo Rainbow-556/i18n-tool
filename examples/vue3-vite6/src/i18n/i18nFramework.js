@@ -33,7 +33,7 @@ const i18nFramework = {
   },
   availableLocales() {
     // pluginInstance.global.availableLocales是根据词法排序，此处返回i18n-tool.config.cjs中runtimeTargetLangConfig的顺序，保持一致
-    return ['zh-CN', 'en-US'];
+    return ['zh-CN'];
   },
   currentLocale() {
     if (pluginInstance.mode === 'legacy') {
