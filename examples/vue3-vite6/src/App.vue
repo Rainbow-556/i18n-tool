@@ -58,6 +58,7 @@ const b = computed(() => {
 // const { t } = useI18n();
 
 console.log('json', json);
+console.log('vite define', stringVal, numberVal, objectVal);
 
 const world = '世界1' + '世界2';
 const world2 = ref('新的词条1');
