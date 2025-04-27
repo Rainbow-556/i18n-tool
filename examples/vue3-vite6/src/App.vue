@@ -17,7 +17,7 @@
   <div>世界1</div>
   <!-- <div v-html="html"></div> -->
   <div>{{ world }}你好56{{ world }}</div>
-  <button @click="onSwitchBtnClick">切换语言</button>
+  <button v-for="lang in langs" :key="lang" @click="onSwitchBtnClick(lang)">切换{{ lang }}</button>
   <!-- <img :alt="world2" /> -->
   <!-- <el-button type="primary">你好</el-button> -->
   <!-- <el-button type="primary">{{ world }}</el-button> -->
@@ -53,6 +53,8 @@ const b = computed(() => {
   return `${test.value}中文1--------`;
 });
 
+const langs = i18nFramework.availableLocales();
+
 // const html = /* i18n-tool-ignore-extract */ '<div>你好</div>';
 
 // const { t } = useI18n();
@@ -68,13 +70,8 @@ const hello2 = `${world}，世界${b.value}aaa`;
 // const hello3 = `${world}，世界${b}aaa${a}`;
 console.log(hello, hello2);
 
-function onSwitchBtnClick() {
-  const current = i18nFramework.currentLocale();
-  const list = i18nFramework.availableLocales();
-  const index = list.indexOf(current);
-  const next = index + 1 >= list.length ? 0 : index + 1;
-  i18nFramework.switchLocale({ locale: list[next], reload: true });
-  // baiduTranslator.translate('你好{p0}\n我很好\n你好hello\n Vue2SyntaxView你好 {p0} ');
+function onSwitchBtnClick(lang) {
+  i18nFramework.switchLocale({ locale: lang, reload: true });
 }
 </script>
 

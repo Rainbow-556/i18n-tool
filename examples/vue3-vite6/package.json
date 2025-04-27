@@ -4,10 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node ./build/dev.cjs",
-    "dev2": "cross-env COUNTRY=zh vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "node node_modules/@rainbow556/i18n-tool/lib/script/execBuild.cjs --BUILD_COMMAND raw-dev",
+    "raw-dev": "vite",
+    "build": "node node_modules/@rainbow556/i18n-tool/lib/script/execBuild.cjs --BUILD_COMMAND raw-build",
+    "raw-build": "vite build",
+    "preview": "node node_modules/@rainbow556/i18n-tool/lib/script/execBuild.cjs --BUILD_COMMAND raw-preview --COUNTRY china --ENV test",
+    "raw-preview": "vite preview",
     "extract": "i18n-tool extract",
     "extract-s": "i18n-tool extract --staged",
     "stats": "i18n-tool stats",
@@ -25,7 +27,6 @@
   "devDependencies": {
     "@rainbow556/i18n-tool": "0.0.1-beta.8",
     "@vitejs/plugin-vue": "^5.2.1",
-    "cross-env": "^7.0.3",
     "sass": "^1.85.1",
     "vite": "^6.2.0"
   }

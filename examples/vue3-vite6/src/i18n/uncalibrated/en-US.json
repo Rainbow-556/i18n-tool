@@ -2,7 +2,6 @@
   "7eca689f0d3389d9dea66ae112e5cfd7": "hello",
   "11c8936354f9cac58062bdab8d22114f": "world 1",
   "120dfe6e70d7ced8d67ff0330603c9b9": "{p0} Hello 56 {p1}",
-  "f19cc4345b6f28d3282af680e8fe5bd1": "switch language",
   "6487f7c95d3ae0916632bdba29e436e3": "World 1, World 2",
   "06490fa68b8925d6a91b3a50be4fe1f7": "{p0} Chinese 1--------",
   "9a053c7df3b6d3e116e4ba3965ddbf56": "New entry 1",
@@ -22,5 +21,6 @@
   "ecbff9e2f9776daaf1c8533c4ff16d2e": "From. mjs {p0}",
   "543165c078001e14c2d298cca35e96b0": "Hello Vite, hello",
   "3975964d7b98781bcea2c92dfec519df": "Hello Vue2SyntaxView {p0}",
-  "130a6ae3b45259e3fdc1bbd1ad914339": "From. cjs {p0} {p1}"
+  "130a6ae3b45259e3fdc1bbd1ad914339": "From. cjs {p0} {p1}",
+  "15b053cf2354596aad8d964a71185db9": "Switch {p0}"
 }

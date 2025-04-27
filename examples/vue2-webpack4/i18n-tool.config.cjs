@@ -1,12 +1,16 @@
 module.exports = {
   // targetLangs: ['en-US', 'es-MX', 'id-ID'],
   targetLangs: ['en-US', 'zh-CN'],
-  runtimeTargetLangs: (process.env.I18N_RUNTIME_TARGET_LANGS && process.env.I18N_RUNTIME_TARGET_LANGS.split(',')) || [],
+  runtimeTargetLangConfig: {
+    china_test: ['zh-CN', 'en-US'],
+    china_prod: ['zh-CN'],
+    indonesia_test: ['id-ID'],
+    indonesia_prod: ['id-ID']
+  },
   i18nDir: 'src/i18n',
   i18nAlias: '@/i18n/index.js',
   tempDir: 'i18nToolTemp',
   dirs: ['src', 'node_modules/@fake-npm/lib'],
-  // dirs: ['src'],
   include: ['**/*.{js,cjs,mjs,json,vue}'],
   // include: ['**/*.{js,cjs,mjs,json,vue,ts,tsx,jsx}'],
   // include: ['src/mockEntry.json'],

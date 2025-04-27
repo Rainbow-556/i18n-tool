@@ -30,8 +30,8 @@ const i18nFramework = {
     }
   },
   availableLocales() {
-    // pluginInstance.availableLocales是根据词法排序，此处返回i18n-tool.config.cjs中runtimeTargetLangs的顺序，保持一致
-    return ['zh-CN', 'en-US'];
+    // pluginInstance.availableLocales是根据词法排序，此处返回i18n-tool.config.cjs中runtimeTargetLangConfig的顺序，保持一致
+    return ['zh-CN'];
   },
   currentLocale() {
     return pluginInstance.locale;

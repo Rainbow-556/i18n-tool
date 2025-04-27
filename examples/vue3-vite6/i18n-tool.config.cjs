@@ -1,16 +1,12 @@
-// vite中如何获取.env变量？
-const { loadEnv } = require('vite');
-
-// 获取当前模式（development/production）
-const mode = process.env.NODE_ENV || 'development';
-
-// 加载环境变量（自动读取.env和.env.[mode]文件）
-const env = loadEnv(mode, process.cwd(), 'VITE_');
-console.log('env', env);
-
 module.exports = {
   // targetLangs: ['en-US', 'es-MX', 'id-ID'],
   targetLangs: ['en-US', 'zh-CN'],
+  runtimeTargetLangConfig: {
+    china_test: ['zh-CN', 'en-US'],
+    china_prod: ['zh-CN'],
+    indonesia_test: ['id-ID'],
+    indonesia_prod: ['id-ID']
+  },
   i18nDir: 'src/i18n',
   i18nAlias: '@/i18n/index.js',
   tempDir: 'i18nToolTemp',

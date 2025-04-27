@@ -3,8 +3,8 @@ import { createI18n } from 'vue-i18n';
 
 const pluginInstance = createI18n({
   legacy: false,
-  locale: 'en-US',
-  fallbackLocale: 'en-US'
+  locale: 'zh-CN',
+  fallbackLocale: 'zh-CN'
 });
 
 const i18nFramework = {
@@ -32,8 +32,8 @@ const i18nFramework = {
     }
   },
   availableLocales() {
-    // pluginInstance.global.availableLocales是根据词法排序，此处返回i18n-tool.config.cjs中runtimeTargetLangs的顺序，保持一致
-    return ['en-US', 'zh-CN'];
+    // pluginInstance.global.availableLocales是根据词法排序，此处返回i18n-tool.config.cjs中runtimeTargetLangConfig的顺序，保持一致
+    return ['zh-CN', 'en-US'];
   },
   currentLocale() {
     if (pluginInstance.mode === 'legacy') {
