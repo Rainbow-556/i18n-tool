@@ -5,8 +5,8 @@ import VueI18n from 'vue-i18n';
 Vue.use(VueI18n);
 
 const pluginInstance = new VueI18n({
-  locale: 'zh-CN',
-  fallbackLocale: 'zh-CN'
+  locale: 'en-US',
+  fallbackLocale: 'en-US'
 });
 
 const i18nFramework = {
@@ -31,7 +31,7 @@ const i18nFramework = {
   },
   availableLocales() {
     // pluginInstance.availableLocales是根据词法排序，此处返回i18n-tool.config.cjs中runtimeTargetLangConfig的顺序，保持一致
-    return ['zh-CN'];
+    return ['en-US', 'zh-CN'];
   },
   currentLocale() {
     return pluginInstance.locale;
