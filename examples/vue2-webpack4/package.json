@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node node_modules/@rainbow556/i18n-tool/lib/script/execBuild.cjs --BUILD_COMMAND raw-dev",
+    "dev": "node node_modules/@rainbow556/i18n-tool/lib/script/execBuild.cjs --PKG_MANAGER pnpm --BUILD_COMMAND raw-dev",
     "raw-dev": "vue-cli-service serve",
-    "build": "node node_modules/@rainbow556/i18n-tool/lib/script/execBuild.cjs --BUILD_COMMAND raw-build",
+    "build": "node node_modules/@rainbow556/i18n-tool/lib/script/execBuild.cjs --PKG_MANAGER pnpm --BUILD_COMMAND raw-build",
     "raw-build": "vue-cli-service build",
     "preview": "pnpm build --COUNTRY china --ENV test && http-server dist -p 8081",
     "inspect": "vue-cli-service inspect",

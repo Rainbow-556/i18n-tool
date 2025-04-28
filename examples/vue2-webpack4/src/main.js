@@ -2,17 +2,17 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import { i18nFramework } from '@/i18n/index.js';
+import { i18n } from '@/i18n/index.js';
 
 Vue.config.productionTip = false;
 new Vue({
   router,
   store,
-  i18n: i18nFramework.i18nInstance,
+  i18n: i18n.instance,
   render: h => h(App)
 }).$mount('#app');
 
 // initI18n().then(() => {
-//   console.log('i18nFramework 初始化完成');
+//   console.log('i18n 初始化完成');
 //   import('./originMain.js');
 // });

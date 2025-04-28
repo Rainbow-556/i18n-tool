@@ -22,7 +22,7 @@ import { generateKey } from '@/fileFormat/cjs.cjs';
 import '@/fileFormat/js.js';
 import '@/fileFormat/mjs.mjs';
 import json from '@/fileFormat/json.json';
-import { i18nFramework } from '@/i18n/index.js';
+import { i18n } from '@/i18n/index.js';
 
 console.log('json', json);
 console.log('cjs的generateKey', generateKey('generateKey'));
@@ -40,11 +40,11 @@ export default {
   },
   methods: {
     onSwitchBtnClick() {
-      const current = i18nFramework.currentLocale();
-      const list = i18nFramework.availableLocales();
+      const current = i18n.currentLocale();
+      const list = i18n.availableLocales();
       const index = list.indexOf(current);
       const next = index + 1 >= list.length ? 0 : index + 1;
-      i18nFramework.switchLocale(list[next], true);
+      i18n.switchLocale({ locale: list[next], reload: true });
     }
   }
 };

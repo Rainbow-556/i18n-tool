@@ -1,9 +1,7 @@
 {
-  "248b3fa968e9694fb401088d31ae8560": "Chinese Chinese Chinese Chinese",
   "7d648b374134d2f2735fdf3898657346": "Template string {p0}",
   "f9fb6a063d1856da86a06def2dc6b921": "English",
   "7eca689f0d3389d9dea66ae112e5cfd7": "hello",
   "08c51326bb75810ac77b9f7707453674": "Data {p0} and {p1}",
-  "0f481397f36836c17e01c47429088830": "Head {p0} Tail",
-  "224a8627f7ab1207d47d682275df5470": "Test Test Test Test Test Test Test"
+  "0f481397f36836c17e01c47429088830": "Head {p0} Tail"
 }

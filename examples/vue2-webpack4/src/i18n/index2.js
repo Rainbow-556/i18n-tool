@@ -44,4 +44,4 @@ export function initI18n() {
 // } else {
 //   localStorage.removeItem('i18n-tool-locale');
 // }
-export const i18nFramework = i18n;
+export { i18n };

@@ -5,7 +5,6 @@
   "46c68f4038b0721fe1b7a706ef09135b": "The generateKey of cjs",
   "08c51326bb75810ac77b9f7707453674": "Data {p0} and {p1}",
   "0f481397f36836c17e01c47429088830": "Head {p0} Tail",
-  "4b5e86a17e0198fbf2f19b4a56b139df": "Copywriting 2",
   "81125bd228283891d0afce91e9a96a39": "Environment variable {p0}",
   "1b4d72e7cd185793fb9edcea4417c920": "Independent block",
   "dd76a8584cd943ac43c1beeb715c0e63": "IndependentBlock created",
@@ -20,6 +19,5 @@
   "f6da36b54ab04addfe0435f8753d5ebe": "Fake's message",
   "97d9ccfa511ca67c9c26b078313294df": "Fake's created hook",
   "15b053cf2354596aad8d964a71185db9": "Switch {p0}",
-  "aa8c2be35c5e26f4429751a1d6c1620a": "From testjs",
   "d6703c346c4de74354eaedaddb5f13b9": "Copywriting 3"
 }

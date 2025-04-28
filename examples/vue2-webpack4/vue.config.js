@@ -13,7 +13,7 @@ module.exports = {
             // 同时处理同步（initial）和异步（async）加载的模块
             chunks: 'all',
             // 低于此值的模块不会被拆分，单位为字节（1KB = 1024字节）
-            minSize: 500, // 新增最小体积限制（20KB）
+            minSize: 500,
             // 值为1时：所有匹配模块都会被拆分，值为2时：至少有2个模块引用时才会被拆分
             minChunks: 1,
             priority: 20,
@@ -29,6 +29,7 @@ module.exports = {
       .use('vue-loader')
       .loader('vue-loader')
       .tap(options => {
+        options.compilerOptions = options.compilerOptions || {};
         options.compilerOptions.comments = false;
         return options;
       })

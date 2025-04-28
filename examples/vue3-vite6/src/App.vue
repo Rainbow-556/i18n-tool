@@ -41,10 +41,10 @@ import { ref, computed } from 'vue';
 // import HelloWorld from "./components/HelloWorld.vue";
 import Vue2SyntaxView from '@/components/vue2SyntaxView.vue';
 // import Vue2SyntaxView from "@test/lib/vue2SyntaxView.vue";
-import { i18nFramework } from '@/i18n/index.js';
+import { i18n } from '@/i18n/index.js';
 // import { useI18n } from "vue-i18n";
 // import { baiduTranslator } from '@rainbow556/i18n-tool/lib/translator/baiduTranslator.mjs';
-// console.log('i18nFramework', i18nFramework.t('hello', { p1: '占位' }));
+// console.log('i18n', i18n.t('hello', { p1: '占位' }));
 
 // console.log('cjs run', generateKey('test'));
 
@@ -53,7 +53,7 @@ const b = computed(() => {
   return `${test.value}中文1--------`;
 });
 
-const langs = i18nFramework.availableLocales();
+const langs = i18n.availableLocales();
 
 // const html = /* i18n-tool-ignore-extract */ '<div>你好</div>';
 
@@ -71,7 +71,7 @@ const hello2 = `${world}，世界${b.value}aaa`;
 console.log(hello, hello2);
 
 function onSwitchBtnClick(lang) {
-  i18nFramework.switchLocale({ locale: lang, reload: true });
+  i18n.switchLocale({ locale: lang, reload: true });
 }
 </script>
 

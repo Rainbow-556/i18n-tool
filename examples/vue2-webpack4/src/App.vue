@@ -31,7 +31,7 @@ import { generateKey } from '@/fileFormat/cjs.cjs';
 import '@/fileFormat/js.js';
 import '@/fileFormat/mjs.mjs';
 import json from '@/fileFormat/json.json';
-import { i18nFramework } from '@/i18n/index.js';
+import { i18n } from '@/i18n/index.js';
 import Fake from '@fake-npm/lib/fake.vue';
 import FakeJson from '@fake-npm/lib/fake.json';
 import IndependentBlock from './components/independentBlock/index.vue';
@@ -57,13 +57,13 @@ export default {
       t2: `文案3`,
       envText: `环境变量${process.env.VUE_APP_TEXT}`,
       envText2: `${process.env.VUE_APP_TEXT}`,
-      langs: i18nFramework.availableLocales(),
-      currentLang: i18nFramework.currentLocale()
+      langs: i18n.availableLocales(),
+      currentLang: i18n.currentLocale()
     };
   },
   methods: {
     onSwitchBtnClick(lang) {
-      i18nFramework.switchLocale({ locale: lang, reload: true });
+      i18n.switchLocale({ locale: lang, reload: true });
     }
   }
 };
