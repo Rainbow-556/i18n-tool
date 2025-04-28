@@ -1,3 +1,5 @@
+const { KEY } = require('../../lib/key.cjs');
+
 module.exports = {
   // targetLangs: ['en-US', 'es-MX', 'id-ID'],
   targetLangs: ['en-US', 'zh-CN'],
@@ -14,5 +16,13 @@ module.exports = {
   include: ['**/*.{js,cjs,mjs,json,vue}'],
   // include: ['**/*.{js,cjs,mjs,json,vue,ts,tsx,jsx}'],
   // include: ['src/mockEntry.json'],
-  exclude: []
+  exclude: [],
+  translator: {
+    name: 'baidu',
+    options: {
+      appId: KEY.BAIDU_APP_ID,
+      secretKey: KEY.BAIDU_SECRET_KEY,
+      apiKey: KEY.DEEP_SEEK_API_KEY
+    }
+  }
 };

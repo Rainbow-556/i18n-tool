@@ -1,4 +1,4 @@
-// 该文件是构建时自动生成的，每次都会覆盖，请勿修改！！！
+// 该文件是每次构建时自动生成的，请勿修改！！！
 import { createRealI18n } from './realI18n.js';
 import en_US_calibrated from './calibrated/en-US.json';
 import en_US_uncalibrated from './uncalibrated/en-US.json';

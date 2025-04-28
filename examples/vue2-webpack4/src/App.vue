@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>current lang: {{ currentLang }}</div>
-    中文中文中文中文2
+    中文中文中文中文
 
     {{ msg }}
     <div class="css-var">{{ `模板字符串${msg}` }}</div>

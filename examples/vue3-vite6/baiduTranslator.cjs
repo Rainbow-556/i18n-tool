@@ -1,7 +1,10 @@
-import CryptoJS from 'crypto-js';
-import axios from 'axios';
+const { createHash } = require('crypto');
+const axios = require('axios');
+const { KEY } = require('../../lib/key.cjs');
 
-// todo 百度翻译需要企业版才支持所有翻译对，个人和高级版不支持中文转印尼语，中文转西班牙语时{p0}也会被翻译！！！
+function md5(str) {
+  return createHash('md5').update(str).digest('hex');
+}
 
 const langMap = {
   'zh-CN': 'zh',
@@ -10,20 +13,16 @@ const langMap = {
   'es-MX': 'spa'
 };
 
-const baiduTranslator = {
-  // todo 更新为百度翻译的最大字符限制
-  maxCharsPerReq: 100,
-  qps: 1,
-  options: {
-    appId: '',
-    secretKey: ''
-  },
-  setOptions({ appId, secretKey }) {
-    this.options.appId = appId;
-    this.options.secretKey = secretKey;
-  },
+class BaiduTranslator {
+  constructor() {
+    this.maxCharsPerReq = 100;
+    this.qps = 1;
+    this.appId = KEY.BAIDU_APP_ID;
+    this.secretKey = KEY.BAIDU_SECRET_KEY;
+  }
+
   async translate({ originLang, targetLang, texts }) {
-    const { appId, secretKey } = this.options;
+    const { appId, secretKey } = this;
     const salt = Date.now();
     const q = texts.join('\n');
     const data = {
@@ -32,7 +31,7 @@ const baiduTranslator = {
       from: langMap[originLang],
       to: langMap[targetLang],
       salt,
-      sign: CryptoJS.MD5(appId + q + salt + secretKey).toString()
+      sign: md5(appId + q + salt + secretKey)
     };
     const time = Date.now();
     let success = false;
@@ -44,8 +43,7 @@ const baiduTranslator = {
           'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
         }
       });
-      // console.log('response.data');
-      // console.log(JSON.stringify(response.data, null, 2));
+      // console.log(`response.data\n${JSON.stringify(response.data, null, 2)}`);
       // 格式
       // const data = {
       //   error_code: '54001',
@@ -94,6 +92,15 @@ const baiduTranslator = {
       );
     }
   }
-};
+}
 
-export { baiduTranslator };
+// const translator = new BaiduTranslator();
+// translator.translate({
+//   originLang: 'zh-CN',
+//   targetLang: 'en-US',
+//   texts: ['你好', '世界']
+// });
+
+module.exports = {
+  BaiduTranslator
+};
