@@ -1,4 +1,4 @@
-import { batchTranslate } from './batchTranslate.js';
+import { batchTranslate } from './translator/batchTranslate.js';
 import { deepTraverse, setValueByPath } from './utils/json.js';
 import { containsChinese, replaceChineseToEncryptedStr } from './utils/containsChinese.js';
 import { cache } from './cache/index.js';
@@ -134,7 +134,7 @@ export const jsonStringHandler = {
         options: this.translatorOptions
       }
     });
-    console.log(`translatedSuccessResults:\n${JSON.stringify(translatedSuccessResults, null, 2)}`);
+    // console.log(`translatedSuccessResults:\n${JSON.stringify(translatedSuccessResults, null, 2)}`);
     console.log(`translatedFailResults:\n${JSON.stringify(translatedFailResults, null, 2)}`);
 
     if (translatedSuccessResults[this.targetLang]?.length > 0) {

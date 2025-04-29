@@ -1,5 +1,5 @@
-import { baiduTranslator } from './translator/baiduTranslator.js';
-import { deepSeekTranslator } from './translator/deepSeekTranslator.js';
+import { baiduTranslator } from './baiduTranslator.js';
+import { deepSeekTranslator } from './deepSeekTranslator.js';
 
 async function batchTranslateInner({ originLang, targetLang, textInfos, translator }) {
   if (textInfos.length === 0) {
