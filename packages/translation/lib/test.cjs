@@ -39,8 +39,8 @@ const jsonObj = {
 };
 
 async function test() {
-  const { jsonStringHandler } = await import('./jsonStringHandler.js');
-  jsonStringHandler.init({
+  const { jsonTargetStringHandler } = await import('./jsonTargetStringHandler.js');
+  jsonTargetStringHandler.init({
     targetLang: 'en-US',
     translatorName: 'baidu',
     translatorOptions: {
@@ -49,7 +49,7 @@ async function test() {
     },
     timeout: 3000
   });
-  jsonStringHandler
+  jsonTargetStringHandler
     .handle(jsonObj)
     .then(result => {
       console.log('result');

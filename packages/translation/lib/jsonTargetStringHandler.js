@@ -7,7 +7,7 @@ import { cache } from './cache/index.js';
 // 实时翻译要求速度快，只能使用机器翻译
 const supportedTranslatorNames = ['baidu'];
 
-export const jsonStringHandler = {
+export const jsonTargetStringHandler = {
   hasInit: false,
   translator: null,
   translatorName: '',
