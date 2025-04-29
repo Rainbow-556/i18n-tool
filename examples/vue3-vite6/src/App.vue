@@ -18,6 +18,12 @@
   <!-- <div v-html="html"></div> -->
   <div>{{ world }}你好56{{ world }}</div>
   <button v-for="lang in langs" :key="lang" @click="onSwitchBtnClick(lang)">切换{{ lang }}</button>
+  <div>
+    <button @click="onAddBtnClick">插入数据</button>
+    <button @click="onQueryBtnClick">查询数据</button>
+    <button @click="onRemoveBtnClick">删除数据</button>
+    <button @click="onClearBtnClick">清空数据</button>
+  </div>
   <!-- <img :alt="world2" /> -->
   <!-- <el-button type="primary">你好</el-button> -->
   <!-- <el-button type="primary">{{ world }}</el-button> -->
@@ -42,6 +48,7 @@ import { ref, computed } from 'vue';
 import Vue2SyntaxView from '@/components/vue2SyntaxView.vue';
 // import Vue2SyntaxView from "@test/lib/vue2SyntaxView.vue";
 import { i18n } from '@/i18n/index.js';
+import { indexedDBCache } from './indexedDBCache.js';
 // import { useI18n } from "vue-i18n";
 // import { baiduTranslator } from '@rainbow556/i18n-tool/lib/translator/baiduTranslator.mjs';
 // console.log('i18n', i18n.t('hello', { p1: '占位' }));
@@ -72,6 +79,51 @@ console.log(hello, hello2);
 
 function onSwitchBtnClick(lang) {
   i18n.switchLocale({ locale: lang, reload: true });
+}
+
+function onAddBtnClick() {
+  indexedDBCache
+    .setItem({ key: 'test', age: 123, list: [1, 2, 3] })
+    .then(() => {
+      console.log('插入成功');
+    })
+    .catch(err => {
+      console.log('err', err);
+    });
+}
+
+function onQueryBtnClick() {
+  indexedDBCache
+    .getItem('test')
+    .then(res => {
+      console.log('查询成功');
+      console.log('res', res);
+    })
+    .catch(err => {
+      console.log('err', err);
+    });
+}
+
+function onRemoveBtnClick() {
+  indexedDBCache
+    .removeItem('test')
+    .then(() => {
+      console.log('删除成功');
+    })
+    .catch(err => {
+      console.log('err', err);
+    });
+}
+
+function onClearBtnClick() {
+  indexedDBCache
+    .clear()
+    .then(() => {
+      console.log('清除成功');
+    })
+    .catch(err => {
+      console.log('err', err);
+    });
 }
 </script>
 
