@@ -21,8 +21,8 @@
   <div>
     <button @click="onAddBtnClick">插入数据</button>
     <button @click="onQueryBtnClick">查询数据</button>
-    <button @click="onRemoveBtnClick">删除数据</button>
-    <button @click="onClearBtnClick">清空数据</button>
+    <!-- <button @click="onRemoveBtnClick">删除数据</button>
+    <button @click="onClearBtnClick">清空数据</button> -->
   </div>
   <!-- <img :alt="world2" /> -->
   <!-- <el-button type="primary">你好</el-button> -->
@@ -48,7 +48,9 @@ import { ref, computed } from 'vue';
 import Vue2SyntaxView from '@/components/vue2SyntaxView.vue';
 // import Vue2SyntaxView from "@test/lib/vue2SyntaxView.vue";
 import { i18n } from '@/i18n/index.js';
-import { indexedDBCache } from './indexedDBCache.js';
+import { IndexedDBCache } from './cache/indexedDBCache.js';
+import { MemoryCache } from './cache/memoryCache.js';
+import { Cache } from './cache/index.js';
 // import { useI18n } from "vue-i18n";
 // import { baiduTranslator } from '@rainbow556/i18n-tool/lib/translator/baiduTranslator.mjs';
 // console.log('i18n', i18n.t('hello', { p1: '占位' }));
@@ -81,20 +83,48 @@ function onSwitchBtnClick(lang) {
   i18n.switchLocale({ locale: lang, reload: true });
 }
 
+const indexedDBCache = new IndexedDBCache({ maxItems: 3 });
+const memoryCache = new MemoryCache({ maxItems: 3 });
+const cache = new Cache({ maxItems: 3 });
+
 function onAddBtnClick() {
-  indexedDBCache
-    .setItem({ key: 'test', age: 123, list: [1, 2, 3] })
+  cache
+    .setItems([
+      { key: 'test4', age: 123, list: [1, 2] },
+      { key: 'test5', age: 123, list: [1, 2, 3] }
+      // { key: 'test6', age: 123, list: [1, 2, 3] },
+      // { key: 'test7', age: 123, list: [1, 2, 3] }
+      // { key: 'test6', age: 1233, list: [1, 2] }
+      // { key: 'test4', age: 123, list: [1, 2, 3] }
+    ])
     .then(() => {
       console.log('插入成功');
     })
     .catch(err => {
       console.log('err', err);
     });
+  // memoryCache.setItems([
+  //   { key: 'test4', age: 123, list: [1, 2] },
+  //   { key: 'test5', age: 123, list: [1, 2, 3] }
+  //   // { key: 'test6', age: 123, list: [1, 2, 3] },
+  //   // { key: 'test7', age: 123, list: [1, 2, 3] }
+  //   // { key: 'test6', age: 1233, list: [1, 2] }
+  //   // { key: 'test4', age: 123, list: [1, 2, 3] }
+  // ]);
+  // memoryCache.setItems([
+  //   { key: 'test4', age: 123, list: [1, 2] },
+  //   { key: 'test5', age: 123, list: [1, 2, 3] },
+  //   { key: 'test6', age: 123, list: [1, 2, 3] },
+  //   { key: 'test7', age: 123, list: [1, 2, 3] }
+  //   // { key: 'test6', age: 1233, list: [1, 2] }
+  //   // { key: 'test4', age: 123, list: [1, 2, 3] }
+  // ]);
+  // console.log('插入成功');
 }
 
 function onQueryBtnClick() {
-  indexedDBCache
-    .getItem('test')
+  cache
+    .getItems(['test4', 'test5', 'test6'])
     .then(res => {
       console.log('查询成功');
       console.log('res', res);
@@ -102,29 +132,31 @@ function onQueryBtnClick() {
     .catch(err => {
       console.log('err', err);
     });
+  // console.log('查询成功');
+  // console.log(memoryCache.getItems(['test4', 'test5', 'test6']));
 }
 
-function onRemoveBtnClick() {
-  indexedDBCache
-    .removeItem('test')
-    .then(() => {
-      console.log('删除成功');
-    })
-    .catch(err => {
-      console.log('err', err);
-    });
-}
+// function onRemoveBtnClick() {
+//   indexedDBCache
+//     .removeItem('test')
+//     .then(() => {
+//       console.log('删除成功');
+//     })
+//     .catch(err => {
+//       console.log('err', err);
+//     });
+// }
 
-function onClearBtnClick() {
-  indexedDBCache
-    .clear()
-    .then(() => {
-      console.log('清除成功');
-    })
-    .catch(err => {
-      console.log('err', err);
-    });
-}
+// function onClearBtnClick() {
+//   indexedDBCache
+//     .clear()
+//     .then(() => {
+//       console.log('清除成功');
+//     })
+//     .catch(err => {
+//       console.log('err', err);
+//     });
+// }
 </script>
 
 <style scoped>
