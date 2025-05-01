@@ -16,7 +16,7 @@
   "scripts": {
     "prepare": "husky",
     "npm-login": "npm login --registry=https://registry.npmjs.org/",
-    "npm-publish": "npm publish --registry=https://registry.npmjs.org/"
+    "npm-publish": "npm publish --registry=https://registry.npmjs.org/ --access public"
   },
   "dependencies": {
     "@babel/core": "7.26.10",
@@ -28,6 +28,7 @@
     "@biomejs/biome": "1.9.4",
     "@biomejs/js-api": "0.7.1",
     "@biomejs/wasm-nodejs": "1.9.4",
+    "@rainbow556/translation": "0.0.1-beta.1",
     "@vue/babel-plugin-jsx": "1.4.0",
     "@vue/babel-plugin-transform-vue-jsx": "1.4.0",
     "@vue/compiler-sfc": "3.5.13",
