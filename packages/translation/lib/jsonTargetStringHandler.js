@@ -1,11 +1,50 @@
 import { batchTranslate } from './translator/batchTranslate.js';
 import { deepTraverse, setValueByPath } from './utils/json.js';
 import { containsChinese, replaceChineseToEncryptedStr } from './utils/containsChinese.js';
-import { cache } from './cache/index.js';
+import { Cache } from './cache/index.js';
+import CryptoJS from 'crypto-js';
 
 // todo 其他翻译器，火山
 // 实时翻译要求速度快，只能使用机器翻译
 const supportedTranslatorNames = ['baidu'];
+
+const cache = new Cache({ maxItems: 500 });
+
+function addToCache({ targetLang, translatedTextInfos }) {
+  // 格式
+  // const translatedTextInfos = { '原文1': '译文1', '原文2': '译文2' }
+  cache.setItems(
+    Object.keys(translatedTextInfos).map(originText => ({
+      key: targetLang + CryptoJS.MD5(originText).toString(),
+      translatedText: translatedTextInfos[originText]
+    }))
+  );
+}
+
+function getFromCache({ targetLang, originTexts }) {
+  // 格式
+  // const texts = ['原文1'];
+  const keys = originTexts.map(originText => targetLang + CryptoJS.MD5(originText).toString());
+  return cache
+    .getItems(keys)
+    .then(results => {
+      // const cachedResults = { '原文1': '译文1', '原文2': '译文2' }
+      const cachedResults = {};
+      // const nonCachedResults = ['原文3', '原文4']
+      const nonCachedResults = [];
+      results.forEach((result, index) => {
+        if (result !== undefined) {
+          cachedResults[originTexts[index]] = result.translatedText;
+        } else {
+          nonCachedResults.push(originTexts[index]);
+        }
+      });
+    })
+    .catch(e => {
+      console.log('Failed to get items from Cache:', e);
+      return { cachedResults: {}, nonCachedResults: [...originTexts] };
+    });
+}
 
 export const jsonTargetStringHandler = {
   hasInit: false,
@@ -104,9 +143,9 @@ export const jsonTargetStringHandler = {
     // 格式
     // const cachedResults = { '原文1': '译文1', '原文2': '译文2' }
     // const nonCachedResults = ['原文'];
-    const { cachedResults, nonCachedResults } = await cache.get({
-      texts: Object.keys(pendingTranslateTextInfos).map(key => pendingTranslateTextInfos[key].content),
-      targetLang: this.targetLang
+    const { cachedResults, nonCachedResults } = await getFromCache({
+      targetLang: this.targetLang,
+      originTexts: Object.keys(pendingTranslateTextInfos).map(key => pendingTranslateTextInfos[key].content)
     });
 
     // 过滤出未翻译的文本
@@ -143,7 +182,7 @@ export const jsonTargetStringHandler = {
         result[textInfo.key] = textInfo.content;
         return result;
       }, {});
-      cache.set({ translatedTextInfos, targetLang: this.targetLang });
+      addToCache({ targetLang: this.targetLang, translatedTextInfos });
       // 将翻译成功的结果与命中缓存的结果合并
       // 格式
       // const translatedResults = { '原文1': '译文1', '原文2': '译文2' };
