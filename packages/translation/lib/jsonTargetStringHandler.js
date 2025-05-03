@@ -39,6 +39,7 @@ function getFromCache({ targetLang, originTexts }) {
           nonCachedResults.push(originTexts[index]);
         }
       });
+      return { cachedResults, nonCachedResults };
     })
     .catch(e => {
       console.log('Failed to get items from Cache:', e);

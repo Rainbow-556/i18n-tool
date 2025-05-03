@@ -1,7 +1,11 @@
 import CryptoJS from 'crypto-js';
 import axios from 'axios';
+import { jsonp } from '../utils/jsonp.js';
+import { getJsEnv } from '../utils/jsEnv.js';
 
 // todo 百度翻译需要企业版才支持所有翻译对，个人和高级版不支持中文转印尼语，中文转西班牙语时{p0}也会被翻译！！！
+
+const jsEnv = getJsEnv();
 
 const langMap = {
   'zh-CN': 'zh',
@@ -11,8 +15,8 @@ const langMap = {
 };
 
 const baiduTranslator = {
-  // todo 更新为百度翻译的最大字符限制
-  maxCharsPerReq: 100,
+  // todo 更新为百度翻译的最大字符限制，都设置为3000
+  maxCharsPerReq: jsEnv === 'browser' ? 100 : 100,
   qps: 1,
   options: {
     appId: '',
@@ -39,11 +43,19 @@ const baiduTranslator = {
     let errCode;
     let errMsg;
     try {
-      const response = await axios.post('https://fanyi-api.baidu.com/api/trans/vip/translate', data, {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
-      });
+      let response;
+      const url = 'https://fanyi-api.baidu.com/api/trans/vip/translate';
+      if (jsEnv === 'browser') {
+        // 百度翻译接口不支持cors，需要使用jsonp以get方式请求
+        // 注意：jsonp的请求方式只支持get，不支持post
+        response = await jsonp({ url, data });
+      } else {
+        response = await axios.post(url, data, {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+          }
+        });
+      }
       // console.log('response.data');
       // console.log(JSON.stringify(response.data, null, 2));
       // 格式
@@ -90,7 +102,7 @@ const baiduTranslator = {
         }个词条翻译成${targetLang}，总长度为${texts.reduce(
           (result, current) => result + current.length,
           0
-        )}个字符，耗时${((Date.now() - time) / 1000).toFixed(2)}s`
+        )}个字符，耗时${((Date.now() - time) / 1000).toFixed(2)}秒`
       );
     }
   }
