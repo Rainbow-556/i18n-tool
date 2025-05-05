@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "1.8.4",
-    "crypto-js": "4.2.0"
+    "crypto-js": "4.2.0",
+    "volcengine-sdk": "^0.0.2"
   }
 }
