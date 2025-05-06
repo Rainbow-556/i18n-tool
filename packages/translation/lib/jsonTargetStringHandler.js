@@ -1,11 +1,10 @@
 import { batchTranslate } from './translator/batchTranslate.js';
 import { deepTraverse, setValueByPath } from './utils/json.js';
-import { containsChinese, replaceChineseToEncryptedStr } from './utils/containsChinese.js';
+import { containsChinese, replaceChineseToEncryptedStr } from './utils/string.js';
 import { Cache } from './cache/index.js';
 import CryptoJS from 'crypto-js';
 
-// todo 其他翻译器，火山
-// 实时翻译要求速度快，只能使用机器翻译
+// 实时翻译要求速度快，只能使用机器翻译。目前只有百度翻译支持jsonp，可以绕过浏览器的跨域限制，后续可考虑让后端包接口
 const supportedTranslatorNames = ['baidu'];
 
 const cache = new Cache({ maxItems: 500 });
@@ -47,6 +46,15 @@ function getFromCache({ targetLang, originTexts }) {
     });
 }
 
+function isJsonString(str) {
+  try {
+    JSON.parse(str);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 export const jsonTargetStringHandler = {
   hasInit: false,
   translator: null,
@@ -83,11 +91,11 @@ export const jsonTargetStringHandler = {
   },
   async handle(jsonObj) {
     if (!this.hasInit) {
-      throw new Error('jsonStringHandler not init');
+      throw new Error('jsonTargetStringHandler not init');
     }
     const pendingTranslateTextInfos = {};
     deepTraverse(jsonObj, (value, path) => {
-      if (containsChinese(value)) {
+      if (containsChinese(value) && !isJsonString(value)) {
         pendingTranslateTextInfos[value] = { content: value, path, missingLangs: [this.targetLang] };
       }
     });

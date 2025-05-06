@@ -4,6 +4,7 @@ import { jsonp } from '../utils/jsonp.js';
 import { getJsEnv } from '../utils/jsEnv.js';
 
 // todo 百度翻译需要企业版才支持所有翻译对，个人和高级版不支持中文转印尼语，中文转西班牙语时{p0}也会被翻译！！！
+// 文档：https://api.fanyi.baidu.com/doc/21
 
 const jsEnv = getJsEnv();
 
@@ -15,7 +16,8 @@ const langMap = {
 };
 
 const baiduTranslator = {
-  // todo 更新为百度翻译的最大字符限制，都设置为3000
+  // todo 更新为百度翻译的最大字符限制，都设置为1500
+  maxTextCountPerReq: 100,
   maxCharsPerReq: jsEnv === 'browser' ? 100 : 100,
   qps: 1,
   options: {
@@ -33,7 +35,7 @@ const baiduTranslator = {
     const data = {
       q,
       appid: appId,
-      from: langMap[originLang] || 'auto',
+      from: 'auto',
       to: langMap[targetLang],
       salt,
       sign: CryptoJS.MD5(appId + q + salt + secretKey).toString()
@@ -53,7 +55,8 @@ const baiduTranslator = {
         response = await axios.post(url, data, {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-          }
+          },
+          timeout: 15000
         });
       }
       // console.log('response.data');

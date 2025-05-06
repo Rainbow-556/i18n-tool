@@ -8,6 +8,7 @@ const langMap = {
 };
 
 const deepSeekTranslator = {
+  maxTextCountPerReq: 100,
   maxCharsPerReq: 3000,
   qps: 1,
   options: {

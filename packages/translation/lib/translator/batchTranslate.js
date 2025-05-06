@@ -1,12 +1,13 @@
 import { baiduTranslator } from './baiduTranslator.js';
 import { deepSeekTranslator } from './deepSeekTranslator.js';
+import { volcEngineTranslator } from './volcEngineTranslator/index.js';
 
 async function batchTranslateInner({ originLang, targetLang, textInfos, translator }) {
   if (textInfos.length === 0) {
     return { translationResults: [] };
   }
 
-  const { maxCharsPerReq, qps } = translator;
+  const { maxTextCountPerReq, maxCharsPerReq, qps } = translator;
 
   const chunks = [];
   let currentChunk = [];
@@ -16,7 +17,8 @@ async function batchTranslateInner({ originLang, targetLang, textInfos, translat
   for (const textInfo of textInfos) {
     // 加上换行符 \n 的长度
     const potentialNewLength = currentChunkCharsLength + (currentChunk.length > 0 ? 1 : 0) + textInfo.content.length;
-    if (potentialNewLength <= maxCharsPerReq) {
+    if (potentialNewLength < maxCharsPerReq && currentChunk.length < maxTextCountPerReq) {
+      // 如果加上当前文本的长度不超过maxCharsPerReq，并且当前chunk的文本数量不超过maxTextCountPerReq，就将当前文本加入当前chunk
       currentChunk.push(textInfo);
       currentChunkCharsLength = potentialNewLength;
     } else {
@@ -46,7 +48,7 @@ async function batchTranslateInner({ originLang, targetLang, textInfos, translat
       let chunkIndex = currentChunkIndex;
       currentChunkIndex++;
       const chunk = chunks[chunkIndex];
-      // console.log(`开始处理第${chunkIndex}个chunk，chunk总数为${chunks.length}`);
+      // console.log(`开始处理第${chunkIndex + 1}个chunk，chunk总数为${chunks.length}`);
       // await new Promise(resolve => setTimeout(resolve, 5000));
       translator
         .translate({
@@ -68,7 +70,7 @@ async function batchTranslateInner({ originLang, targetLang, textInfos, translat
         })
         .finally(() => {
           completedCount++;
-          // console.log(`第${chunkIndex} chunk结束`);
+          // console.log(`第${chunkIndex + 1}个chunk结束`);
           if (completedCount === chunks.length) {
             resolve({ translationResults });
           } else {
@@ -173,7 +175,7 @@ export async function batchTranslate({ originLang, pendingTranslateTexts, transl
     // 把多个待翻译的文本根据translator的maxCharsPerReq进行分组进行单次接口批量翻译多个文本，每个分组的文本长度总和不能超过maxCharsPerReq
     // translationResults = [{ originTextInfos: [{ key: 'key', content: 'content' }], translatedTexts: ['text'], success: true }]
     const { translationResults } = await batchTranslateInner({
-      originLang: 'zh-CN',
+      originLang,
       targetLang: lang,
       textInfos: validTextInfos,
       translator
@@ -225,6 +227,9 @@ function getTranslator(translatorOptions) {
     baiduTranslator.setOptions(options);
     return baiduTranslator;
   }
+  if (name === 'volcEngine') {
+    volcEngineTranslator.setOptions(options);
+    return volcEngineTranslator;
+  }
+  throw new Error(`不支持的翻译器: ${name}`);
 }
-
-// batchTranslate();

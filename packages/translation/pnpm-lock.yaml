@@ -3,12 +3,10 @@ lockfileVersion: 5.4
 specifiers:
   axios: 1.8.4
   crypto-js: 4.2.0
-  volcengine-sdk: ^0.0.2
 
 dependencies:
   axios: 1.8.4
   crypto-js: 4.2.0
-  volcengine-sdk: 0.0.2
 
 packages:
 
@@ -177,10 +175,4 @@ packages:
 
   /proxy-from-env/1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
-    dev: false
-
-  /volcengine-sdk/0.0.2:
-    resolution: {integrity: sha512-tstAWF1tJSYpEUjYMncEVv3/o9bT6bpBaIh87HY+sVlTaljx18jMAXse3Caa2Aq2Yg+kgEACqrcVwjmV3pQ7Fg==}
-    dependencies:
-      crypto-js: 4.2.0
     dev: false

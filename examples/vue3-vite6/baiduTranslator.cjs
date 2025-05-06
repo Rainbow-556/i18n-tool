@@ -15,6 +15,7 @@ const langMap = {
 
 class BaiduTranslator {
   constructor() {
+    this.maxTextCountPerReq = 100;
     this.maxCharsPerReq = 100;
     this.qps = 1;
     this.appId = KEY.BAIDU_APP_ID;
@@ -88,7 +89,7 @@ class BaiduTranslator {
         }个词条翻译成${targetLang}，总长度为${texts.reduce(
           (result, current) => result + current.length,
           0
-        )}个字符，耗时${((Date.now() - time) / 1000).toFixed(2)}s`
+        )}个字符，耗时${((Date.now() - time) / 1000).toFixed(2)}秒`
       );
     }
   }
