@@ -18,6 +18,8 @@ class BaiduTranslator {
     this.maxTextCountPerReq = 100;
     this.maxCharsPerReq = 100;
     this.qps = 1;
+    this.putHtmlTextInSeparateChunk = true;
+    this.textDividerCharLength = 1;
     this.appId = KEY.BAIDU_APP_ID;
     this.secretKey = KEY.BAIDU_SECRET_KEY;
   }

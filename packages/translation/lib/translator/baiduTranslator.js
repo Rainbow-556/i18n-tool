@@ -20,6 +20,9 @@ const baiduTranslator = {
   maxTextCountPerReq: 100,
   maxCharsPerReq: jsEnv === 'browser' ? 100 : 100,
   qps: 1,
+  // 百度翻译是通过\n来分隔文本的，所以需要把html文本放到单独的chunk中，否则会漏翻译
+  putHtmlTextInSeparateChunk: true,
+  textDividerCharLength: 1,
   options: {
     appId: '',
     secretKey: ''

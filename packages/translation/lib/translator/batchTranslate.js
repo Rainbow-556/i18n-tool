@@ -7,7 +7,13 @@ async function batchTranslateInner({ originLang, targetLang, textInfos, translat
     return { translationResults: [] };
   }
 
-  const { maxTextCountPerReq, maxCharsPerReq, qps } = translator;
+  const {
+    maxTextCountPerReq,
+    maxCharsPerReq,
+    qps,
+    putHtmlTextInSeparateChunk = false,
+    textDividerCharLength = 0
+  } = translator;
 
   const chunks = [];
   let currentChunk = [];
@@ -15,8 +21,14 @@ async function batchTranslateInner({ originLang, targetLang, textInfos, translat
 
   // 将文本根据maxCharsPerReq组装成chunk，每个chunk就是一个单次调用翻译接口
   for (const textInfo of textInfos) {
-    // 加上换行符 \n 的长度
-    const potentialNewLength = currentChunkCharsLength + (currentChunk.length > 0 ? 1 : 0) + textInfo.content.length;
+    if (putHtmlTextInSeparateChunk && textInfo.content.includes('<')) {
+      // content可能是html字符串，单独放到一个chunk中
+      chunks.push([textInfo]);
+      continue;
+    }
+    // 加上文本分隔符的长度
+    const potentialNewLength =
+      currentChunkCharsLength + (currentChunk.length > 0 ? textDividerCharLength : 0) + textInfo.content.length;
     if (potentialNewLength < maxCharsPerReq && currentChunk.length < maxTextCountPerReq) {
       // 如果加上当前文本的长度不超过maxCharsPerReq，并且当前chunk的文本数量不超过maxTextCountPerReq，就将当前文本加入当前chunk
       currentChunk.push(textInfo);

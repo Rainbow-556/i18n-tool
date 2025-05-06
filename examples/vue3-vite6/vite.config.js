@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-// import vitePluginI18n from '@rainbow556/i18n-tool/lib/vitePluginI18nVue3-2';
 import vitePluginI18n from '@rainbow556/i18n-tool/lib/plugin/vite/plugin.mjs';
 import path from 'path';
 

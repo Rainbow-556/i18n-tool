@@ -16,6 +16,7 @@
   </div>
   <div>世界1</div>
   <div v-html="html"></div>
+  <div v-html="html2"></div>
   <div>{{ world }}你好56{{ world }}</div>
   <button v-for="lang in langs" :key="lang" @click="onSwitchBtnClick(lang)">切换{{ lang }}</button>
   <div>
@@ -67,7 +68,8 @@ const b = computed(() => {
 
 const langs = i18n.availableLocales();
 
-const html = /* i18n-tool-ignore-extract */ '<div style="color: red;">v-html i18n-tool-ignore-extract 你好</div>';
+const html = /* i18n-tool-extract-ignored */ '<div style="color: red;">v-html i18n-tool-extract-ignored 你好</div>';
+const html2 = '<div style="color: red;">v-html 你好</div>';
 
 // const { t } = useI18n();
 

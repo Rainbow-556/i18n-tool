@@ -3,8 +3,6 @@
   "11c8936354f9cac58062bdab8d22114f": "world 1",
   "120dfe6e70d7ced8d67ff0330603c9b9": "{p0} Hello 56 {p1}",
   "15b053cf2354596aad8d964a71185db9": "Switch {p0}",
-  "131d2cc4055f927cc5f593ebb1042224": "insert data",
-  "818d0053c91d861ccbaddcd5574af199": "query data",
   "8b3607d0f4181a3cb6ffdccf7185f09b": "translate",
   "6487f7c95d3ae0916632bdba29e436e3": "World 1, World 2",
   "06490fa68b8925d6a91b3a50be4fe1f7": "{p0} Chinese 1--------",
@@ -35,7 +33,7 @@
   "f6da36b54ab04addfe0435f8753d5ebe": "Fake's message",
   "97d9ccfa511ca67c9c26b078313294df": "Fake's created hook",
   "d6703c346c4de74354eaedaddb5f13b9": "Copywriting 3",
-  "20414fc5b9c3eb7b5853f58f02bcbf49": "Chinese Chinese Chinese Chinese {p0}",
+  "507626cd36ac78136e6c1a6776054533": "Chinese Chinese Chinese 4 {p0}",
   "c9247425d6bec9edf98b9831ed800dc3": "From vue2JSXView",
   "3975964d7b98781bcea2c92dfec519df": "Hello Vue2SyntaxView {p0}",
   "ca7003cd26960494288e2f6d3bfd8343": "{p0} Ah ah ah 11",
@@ -55,5 +53,6 @@
   "160446215396993c9efdf68ced2180d7": "From fake data {p7}, and {p0}",
   "cbae06191b6956735476fb287fa80df3": "From fake data {p8}, and {p0}",
   "189690e7b041758b3ea28865632c750a": "From fake data {p9}, and {p0}",
-  "de08b625565eab50dcf977f71ec3e63b": "From fake data {p10}, and {p0}"
+  "de08b625565eab50dcf977f71ec3e63b": "From fake data {p10}, and {p0}",
+  "c0a2d39aab837f5023031fe4cafed312": "<div style=\"color: red;\">v-html You better</div>"
 }

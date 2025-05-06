@@ -12,8 +12,8 @@
     "extract": "i18n-tool extract",
     "extract-s": "i18n-tool extract --staged",
     "stats": "i18n-tool stats",
-    "gen": "i18n-tool gen-uncalibrated-file",
-    "merge": "i18n-tool merge-calibrated-file"
+    "gen": "i18n-tool generate",
+    "merge": "i18n-tool merge"
   },
   "dependencies": {
     "core-js": "^3.6.5",

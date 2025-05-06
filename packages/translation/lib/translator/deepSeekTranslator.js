@@ -11,6 +11,8 @@ const deepSeekTranslator = {
   maxTextCountPerReq: 100,
   maxCharsPerReq: 3000,
   qps: 1,
+  putHtmlTextInSeparateChunk: false,
+  textDividerCharLength: 0,
   options: {
     apiKey: '',
     getPrompt({ originLang, targetLang }) {

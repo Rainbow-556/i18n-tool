@@ -19,6 +19,8 @@ const volcEngineTranslator = {
   maxTextCountPerReq: 100,
   maxCharsPerReq: 1000,
   qps: 1,
+  putHtmlTextInSeparateChunk: false,
+  textDividerCharLength: 0,
   options: {
     accessKeyId: '',
     secretAccessKey: ''
