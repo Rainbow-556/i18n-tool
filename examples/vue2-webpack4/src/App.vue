@@ -54,7 +54,7 @@ export default {
       msg: `数据${text}和${text2}`,
       t: '头部' + text + '尾部',
       name: json[0].name,
-      t2: `文案3`,
+      t2: `文案31`,
       envText: `环境变量${process.env.VUE_APP_TEXT}`,
       envText2: `${process.env.VUE_APP_TEXT}`,
       langs: i18n.availableLocales(),
