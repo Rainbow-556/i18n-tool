@@ -137,14 +137,6 @@ export async function batchTranslate({ originLang, pendingTranslateTexts, transl
   const successResults = {};
   const failResults = {};
 
-  // const translator = {
-  //   maxCharsPerReq: 20,
-  //   qps: 1,
-  //   async translate(originLang, targetLang, texts) {
-  //     return { translatedTexts: texts };
-  //   }
-  // };
-
   const translator = getTranslator(translatorOptions);
 
   for (const lang in langGroup) {

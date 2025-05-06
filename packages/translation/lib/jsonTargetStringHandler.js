@@ -7,7 +7,7 @@ import CryptoJS from 'crypto-js';
 // 实时翻译要求速度快，只能使用机器翻译。目前只有百度翻译支持jsonp，可以绕过浏览器的跨域限制，后续可考虑让后端包接口
 const supportedTranslatorNames = ['baidu'];
 
-const cache = new Cache({ maxItems: 500 });
+let cache;
 
 function addToCache({ targetLang, translatedTextInfos }) {
   // 格式
@@ -69,7 +69,14 @@ export const jsonTargetStringHandler = {
     if (this.hasInit) {
       return;
     }
-    const { customTranslator, translatorName, translatorOptions, targetLang, timeout = 3000 } = options;
+    const {
+      customTranslator,
+      translatorName,
+      translatorOptions,
+      targetLang,
+      timeout = 3000,
+      maxCacheItems = 1000
+    } = options;
     if (typeof customTranslator === 'object') {
       this.translator = customTranslator;
     } else if (!translatorName) {
@@ -88,11 +95,17 @@ export const jsonTargetStringHandler = {
       }
       this.translatorOptions = { appId, secretKey };
     }
+    cache = new Cache({ maxItems: maxCacheItems });
   },
   async handle(jsonObj) {
     if (!this.hasInit) {
       throw new Error('jsonTargetStringHandler not init');
     }
+    if (this.targetLang === 'zh-CN') {
+      // 如果目标语言为中文，无需翻译，直接返回
+      return jsonObj;
+    }
+
     const pendingTranslateTextInfos = {};
     deepTraverse(jsonObj, (value, path) => {
       if (containsChinese(value) && !isJsonString(value)) {
@@ -183,7 +196,7 @@ export const jsonTargetStringHandler = {
       }
     });
     // console.log(`translatedSuccessResults:\n${JSON.stringify(translatedSuccessResults, null, 2)}`);
-    console.log(`translatedFailResults:\n${JSON.stringify(translatedFailResults, null, 2)}`);
+    // console.log(`translatedFailResults:\n${JSON.stringify(translatedFailResults, null, 2)}`);
 
     if (translatedSuccessResults[this.targetLang]?.length > 0) {
       // 有翻译成功的结果，将翻译结果写入缓存，同步写入内存缓存，再异步写入磁盘缓存

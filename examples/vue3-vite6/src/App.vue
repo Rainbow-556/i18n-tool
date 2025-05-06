@@ -15,12 +15,12 @@
     <Vue2SyntaxView :src="world2" />
   </div>
   <div>世界1</div>
-  <!-- <div v-html="html"></div> -->
+  <div v-html="html"></div>
   <div>{{ world }}你好56{{ world }}</div>
   <button v-for="lang in langs" :key="lang" @click="onSwitchBtnClick(lang)">切换{{ lang }}</button>
   <div>
-    <button @click="onAddBtnClick">插入数据</button>
-    <button @click="onQueryBtnClick">查询数据</button>
+    <!-- <button @click="onAddBtnClick">插入数据</button>
+    <button @click="onQueryBtnClick">查询数据</button> -->
     <!-- <button @click="onRemoveBtnClick">删除数据</button>
     <button @click="onClearBtnClick">清空数据</button> -->
   </div>
@@ -67,7 +67,7 @@ const b = computed(() => {
 
 const langs = i18n.availableLocales();
 
-// const html = /* i18n-tool-ignore-extract */ '<div>你好</div>';
+const html = /* i18n-tool-ignore-extract */ '<div style="color: red;">v-html i18n-tool-ignore-extract 你好</div>';
 
 // const { t } = useI18n();
 
@@ -185,14 +185,14 @@ function onTranslateBtnClick() {
     '97d9ccfa511ca67c9c26b078313294df': 'fake的created钩子',
     '15b053cf2354596aad8d964a71185db9': '切换{p0}',
     d6703c346c4de74354eaedaddb5f13b9: '文案3',
-    '20414fc5b9c3eb7b5853f58f02bcbf49': '中文中文中文中文 {p0}'
+    '20414fc5b9c3eb7b5853f58f02bcbf49': '中文中文中文中文3 {p0}'
   };
   jsonTargetStringHandler.init({
-    targetLang: 'en-US',
+    targetLang: i18n.currentLocale(),
     translatorName: 'baidu',
     translatorOptions: {
-      appId: '202104100007717301',
-      secretKey: 'KaBWJs471Kt7K8dNYvpt1'
+      appId: KEY.BAIDU_APP_ID,
+      secretKey: KEY.BAIDU_SECRET_KEY
     },
     timeout: 3000
   });
