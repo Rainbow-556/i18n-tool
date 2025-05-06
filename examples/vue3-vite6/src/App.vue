@@ -185,7 +185,7 @@ function onTranslateBtnClick() {
     '97d9ccfa511ca67c9c26b078313294df': 'fake的created钩子',
     '15b053cf2354596aad8d964a71185db9': '切换{p0}',
     d6703c346c4de74354eaedaddb5f13b9: '文案3',
-    '20414fc5b9c3eb7b5853f58f02bcbf49': '中文中文中文中文3 {p0}'
+    '20414fc5b9c3eb7b5853f58f02bcbf49': '中文中文中文中文4 {p0}'
   };
   jsonTargetStringHandler.init({
     targetLang: i18n.currentLocale(),
