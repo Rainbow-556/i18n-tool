@@ -1,4 +1,3 @@
-
 import { createI18n } from 'vue-i18n';
 
 export function createRealI18n({ locale, fallbackLocale }) {

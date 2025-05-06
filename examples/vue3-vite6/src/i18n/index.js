@@ -11,7 +11,7 @@ const i18n = new Proxy(
   {
     switchLocale({ locale, reload = false }) {
       const currentLocale = realI18n.currentLocale();
-      if (currentLocale === locale) {
+      if (currentLocale === locale || !this.availableLocales().includes(locale)) {
         return;
       }
       localStorage.setItem('i18n-tool-locale', locale);
