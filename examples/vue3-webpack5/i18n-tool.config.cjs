@@ -1,4 +1,4 @@
-const { KEY } = require('../../lib/key.cjs');
+const KEY = require('../../lib/key.json');
 
 module.exports = {
   // targetLangs: ['en-US', 'es-MX', 'id-ID'],

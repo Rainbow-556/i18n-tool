@@ -1,3 +1,4 @@
 examples/
 .husky/
 node_modules/
+key.json

@@ -10,7 +10,7 @@ specifiers:
   '@biomejs/biome': 1.9.4
   '@biomejs/js-api': 0.7.1
   '@biomejs/wasm-nodejs': 1.9.4
-  '@rainbow556/translation': 0.0.1-beta.1
+  '@rainbow556/translation': 0.0.1-beta.2
   '@vue/babel-plugin-jsx': 1.4.0
   '@vue/babel-plugin-transform-vue-jsx': 1.4.0
   '@vue/compiler-sfc': 3.5.13
@@ -34,7 +34,7 @@ dependencies:
   '@biomejs/biome': 1.9.4
   '@biomejs/js-api': 0.7.1_@biomejs+wasm-nodejs@1.9.4
   '@biomejs/wasm-nodejs': 1.9.4
-  '@rainbow556/translation': 0.0.1-beta.1
+  '@rainbow556/translation': 0.0.1-beta.2
   '@vue/babel-plugin-jsx': 1.4.0_@babel+core@7.26.10
   '@vue/babel-plugin-transform-vue-jsx': 1.4.0_@babel+core@7.26.10
   '@vue/compiler-sfc': 3.5.13
@@ -508,11 +508,12 @@ packages:
       '@jridgewell/sourcemap-codec': 1.5.0
     dev: false
 
-  /@rainbow556/translation/0.0.1-beta.1:
-    resolution: {integrity: sha512-bHgMKf+KqDs3sQdvZ21tqeb06dY8iCSooKhtVWMi+qK4IGqM/SNrob6rirWJ9ugcvH+mOxGnchyw/UxNoPFgPA==}
+  /@rainbow556/translation/0.0.1-beta.2:
+    resolution: {integrity: sha512-+6Pg4duob5jVJcavCDfcTSNWSnQVbinEyV0UE4d6c7awqsbwt3/4vGZL8N9H3EmquPnYHmc75B4yt0jpm9GHIQ==}
     dependencies:
       axios: 1.8.4
       crypto-js: 4.2.0
+      volcengine-sdk: 0.0.2
     transitivePeerDependencies:
       - debug
     dev: false
@@ -1528,6 +1529,12 @@ packages:
   /uuid/8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
+    dev: false
+
+  /volcengine-sdk/0.0.2:
+    resolution: {integrity: sha512-tstAWF1tJSYpEUjYMncEVv3/o9bT6bpBaIh87HY+sVlTaljx18jMAXse3Caa2Aq2Yg+kgEACqrcVwjmV3pQ7Fg==}
+    dependencies:
+      crypto-js: 4.2.0
     dev: false
 
   /vue-template-compiler/2.6.14:

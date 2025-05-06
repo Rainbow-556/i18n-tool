@@ -1,11 +1,12 @@
 import VolcEngineSDK from 'volcengine-sdk';
 import axios from 'axios';
+import KEY from '../../../../lib/key.json' assert { type: 'json' };
 
 const { ApiInfo, ServiceInfo, Credentials, API, Request } = VolcEngineSDK;
 
 // 设置安全凭证 AK、SK
-const AK = '';
-const SK = '';
+const AK = KEY.VOLCENGINE_ACCESS_KEY_ID;
+const SK = KEY.VOLCENGINE_SECRET_ACCESS_KEY;
 
 // 翻译目标语言、翻译文本列表
 const toLang = 'zh';

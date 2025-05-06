@@ -1,6 +1,6 @@
 const { createHash } = require('crypto');
 const axios = require('axios');
-const { KEY } = require('../../lib/key.cjs');
+const KEY = require('../../lib/key.json');
 
 function md5(str) {
   return createHash('md5').update(str).digest('hex');
