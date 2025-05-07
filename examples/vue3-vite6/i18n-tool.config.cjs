@@ -2,13 +2,19 @@ const { BaiduTranslator } = require('./baiduTranslator.cjs');
 const KEY = require('../../lib/key.json');
 
 module.exports = {
-  // targetLangs: ['en-US', 'es-MX', 'id-ID'],
-  targetLangs: ['en-US', 'zh-CN'],
-  runtimeTargetLangConfig: {
-    china_test: ['zh-CN', 'en-US'],
-    china_prod: ['zh-CN'],
-    indonesia_test: ['id-ID'],
-    indonesia_prod: ['id-ID']
+  targetLang: {
+    china: {
+      test: ['zh-CN', 'en-US'],
+      prod: ['zh-CN']
+    }
+    // indonesia: {
+    //   test: ['zh-CN', 'id-ID'],
+    //   prod: ['id-ID']
+    // },
+    // mexico: {
+    //   test: ['es-MX', 'zh-CN'],
+    //   prod: ['es-MX']
+    // }
   },
   i18nDir: 'src/i18n',
   i18nAlias: '@/i18n/index.js',
@@ -21,8 +27,8 @@ module.exports = {
   translator: {
     // customTranslator: new BaiduTranslator(),
     // name: 'deepSeek',
-    name: 'baidu',
-    // name: 'volcEngine',
+    // name: 'baidu',
+    name: 'volcEngine',
     options: {
       appId: KEY.BAIDU_APP_ID,
       secretKey: KEY.BAIDU_SECRET_KEY,

@@ -97,13 +97,6 @@ class BaiduTranslator {
   }
 }
 
-// const translator = new BaiduTranslator();
-// translator.translate({
-//   originLang: 'zh-CN',
-//   targetLang: 'en-US',
-//   texts: ['你好', '世界']
-// });
-
 module.exports = {
   BaiduTranslator
 };
