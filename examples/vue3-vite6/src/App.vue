@@ -8,7 +8,7 @@
     </a>
   </div>
   <div>
-    <img alt="你好" />
+    <img alt="你好23" />
     <div>{{ hello }}</div>
     <div>{{ b }}</div>
     <div>{{ world2 }}</div>
