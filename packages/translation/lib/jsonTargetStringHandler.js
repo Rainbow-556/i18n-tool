@@ -89,11 +89,11 @@ export const jsonTargetStringHandler = {
     this.timeout = timeout;
     this.translatorName = translatorName;
     if (translatorName === 'baidu') {
-      const { appId, secretKey } = translatorOptions;
-      if (!appId || !secretKey) {
-        throw new Error(`appId and secretKey are required for baidu translator`);
+      const { baiduAppId, baiduSecretKey } = translatorOptions;
+      if (!baiduAppId || !baiduSecretKey) {
+        throw new Error(`baiduAppId and baiduSecretKey are required for baidu translator`);
       }
-      this.translatorOptions = { appId, secretKey };
+      this.translatorOptions = { baiduAppId, baiduSecretKey };
     }
     cache = new Cache({ maxItems: maxCacheItems });
   },

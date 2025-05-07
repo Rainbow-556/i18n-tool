@@ -44,8 +44,8 @@ async function test() {
     targetLang: 'en-US',
     translatorName: 'baidu',
     translatorOptions: {
-      appId: KEY.BAIDU_APP_ID,
-      secretKey: KEY.BAIDU_SECRET_KEY
+      baiduAppId: KEY.BAIDU_APP_ID,
+      baiduSecretKey: KEY.BAIDU_SECRET_KEY
     },
     timeout: 3000
   });

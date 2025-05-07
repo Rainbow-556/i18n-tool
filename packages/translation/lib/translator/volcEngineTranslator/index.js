@@ -22,17 +22,17 @@ const volcEngineTranslator = {
   putHtmlTextInSeparateChunk: false,
   textDividerCharLength: 0,
   options: {
-    accessKeyId: '',
-    secretAccessKey: ''
+    volcEngineAccessKeyId: '',
+    volcEngineSecretAccessKey: ''
   },
-  setOptions({ accessKeyId, secretAccessKey }) {
-    this.options.accessKeyId = accessKeyId;
-    this.options.secretAccessKey = secretAccessKey;
+  setOptions({ volcEngineAccessKeyId, volcEngineSecretAccessKey }) {
+    this.options.volcEngineAccessKeyId = volcEngineAccessKeyId;
+    this.options.volcEngineSecretAccessKey = volcEngineSecretAccessKey;
   },
   async translate({ originLang, targetLang, texts }) {
-    const { accessKeyId, secretAccessKey } = this.options;
+    const { volcEngineAccessKeyId, volcEngineSecretAccessKey } = this.options;
     // api凭证
-    const credentials = new Credentials(accessKeyId, secretAccessKey, 'translate', 'cn-north-1');
+    const credentials = new Credentials(volcEngineAccessKeyId, volcEngineSecretAccessKey, 'translate', 'cn-north-1');
     // 设置请求的 header、query、body
     const header = new Request.Header({ 'Content-Type': 'application/json' });
     const query = new Request.Query({ Action: 'TranslateText', Version: '2020-06-01' });

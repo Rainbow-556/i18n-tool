@@ -14,7 +14,7 @@ const deepSeekTranslator = {
   putHtmlTextInSeparateChunk: false,
   textDividerCharLength: 0,
   options: {
-    apiKey: '',
+    deepSeekApiKey: '',
     getPrompt({ originLang, targetLang }) {
       return `
 你是一位专业资深翻译官，请把以下JSON数组中的每个字符串翻译为${langMap[targetLang]}。需要严格按照以下规则进行翻译：
@@ -27,8 +27,8 @@ const deepSeekTranslator = {
 原文是"你好{p0}{p1}，{p2}"，译文则是"hello {p0} {p1}, {p2}"`;
     }
   },
-  setOptions({ apiKey, getPrompt }) {
-    this.options.apiKey = apiKey;
+  setOptions({ deepSeekApiKey, getPrompt }) {
+    this.options.deepSeekApiKey = deepSeekApiKey;
     if (typeof getPrompt === 'function') {
       this.options.getPrompt = getPrompt;
     }
@@ -59,7 +59,7 @@ const deepSeekTranslator = {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
-          Authorization: `Bearer ${this.options.apiKey}`
+          Authorization: `Bearer ${this.options.deepSeekApiKey}`
         }
       });
       // console.log('response');
@@ -128,7 +128,7 @@ const deepSeekTranslator = {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
-          Authorization: `Bearer ${this.options.apiKey}`
+          Authorization: `Bearer ${this.options.deepSeekApiKey}`
         }
       });
       // console.log('response.data');

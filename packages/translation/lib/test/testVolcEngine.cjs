@@ -3,8 +3,8 @@ const KEY = require('../../../../lib/key.json');
 async function test() {
   const { volcEngineTranslator } = await import('../translator/volcEngineTranslator/index.js');
   volcEngineTranslator.setOptions({
-    accessKeyId: KEY.VOLC_ENGINE_ACCESS_KEY_ID,
-    secretAccessKey: KEY.VOLC_ENGINE_SECRET_ACCESS_KEY
+    volcEngineAccessKeyId: KEY.VOLC_ENGINE_ACCESS_KEY_ID,
+    volcEngineSecretAccessKey: KEY.VOLC_ENGINE_SECRET_ACCESS_KEY
   });
   const texts = [];
   for (let i = 0; i < 2; i++) {

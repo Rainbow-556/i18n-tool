@@ -24,24 +24,24 @@ const baiduTranslator = {
   putHtmlTextInSeparateChunk: true,
   textDividerCharLength: 1,
   options: {
-    appId: '',
-    secretKey: ''
+    baiduAppId: '',
+    baiduSecretKey: ''
   },
-  setOptions({ appId, secretKey }) {
-    this.options.appId = appId;
-    this.options.secretKey = secretKey;
+  setOptions({ baiduAppId, baiduSecretKey }) {
+    this.options.baiduAppId = baiduAppId;
+    this.options.baiduSecretKey = baiduSecretKey;
   },
   async translate({ originLang, targetLang, texts }) {
-    const { appId, secretKey } = this.options;
+    const { baiduAppId, baiduSecretKey } = this.options;
     const salt = Date.now();
     const q = texts.join('\n');
     const data = {
       q,
-      appid: appId,
+      appid: baiduAppId,
       from: 'auto',
       to: langMap[targetLang],
       salt,
-      sign: CryptoJS.MD5(appId + q + salt + secretKey).toString()
+      sign: CryptoJS.MD5(baiduAppId + q + salt + baiduSecretKey).toString()
     };
     const time = Date.now();
     let success = false;

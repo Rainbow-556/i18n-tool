@@ -30,11 +30,11 @@ module.exports = {
     // name: 'baidu',
     name: 'volcEngine',
     options: {
-      appId: KEY.BAIDU_APP_ID,
-      secretKey: KEY.BAIDU_SECRET_KEY,
-      apiKey: KEY.DEEP_SEEK_API_KEY,
-      accessKeyId: KEY.VOLC_ENGINE_ACCESS_KEY_ID,
-      secretAccessKey: KEY.VOLC_ENGINE_SECRET_ACCESS_KEY
+      baiduAppId: KEY.BAIDU_APP_ID,
+      baiduSecretKey: KEY.BAIDU_SECRET_KEY,
+      deepSeekApiKey: KEY.DEEP_SEEK_API_KEY,
+      volcEngineAccessKeyId: KEY.VOLC_ENGINE_ACCESS_KEY_ID,
+      volcEngineSecretAccessKey: KEY.VOLC_ENGINE_SECRET_ACCESS_KEY
     }
   }
 };
