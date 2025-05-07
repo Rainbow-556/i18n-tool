@@ -22,7 +22,7 @@ const i18n = new Proxy(
       }
     },
     availableLocales() {
-      // realI18n.instance.availableLocales是根据词法排序，此处返回i18n-tool.config.cjs中targetLang[country][env]的顺序，与其保持一致
+      // realI18n.instance.availableLocales是根据词法排序，此处返回i18n-tool.config.cjs中targetLang.country.env的顺序，与其保持一致
       return ['zh-CN', 'en-US'];
     }
   }, 
