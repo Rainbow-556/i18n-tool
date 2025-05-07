@@ -17,8 +17,8 @@ const volcEngineTranslator = {
   // todo 更新为火山翻译的最大字符限制，都设置为3000
   // 火山翻译的要求：TextList列表长度不超过16，但是实测100也是可以的，总文本长度不超过5000字符
   maxTextCountPerReq: 100,
-  maxCharsPerReq: 1000,
-  qps: 1,
+  maxCharsPerReq: 100,
+  qps: 5,
   putHtmlTextInSeparateChunk: false,
   textDividerCharLength: 0,
   options: {

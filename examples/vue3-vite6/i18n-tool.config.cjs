@@ -27,8 +27,8 @@ module.exports = {
   translator: {
     // customTranslator: new BaiduTranslator(),
     // name: 'deepSeek',
-    // name: 'baidu',
-    name: 'volcEngine',
+    name: 'baidu',
+    // name: 'volcEngine',
     options: {
       baiduAppId: KEY.BAIDU_APP_ID,
       baiduSecretKey: KEY.BAIDU_SECRET_KEY,

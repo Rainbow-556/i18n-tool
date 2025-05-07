@@ -1,3 +1,5 @@
+let jsonpIndex = 0;
+
 export function jsonp({ url, data }) {
   const promise = new Promise((resolve, reject) => {
     // 1. 创建script标签
@@ -12,7 +14,8 @@ export function jsonp({ url, data }) {
     }
 
     // 3. 设置script的src属性
-    const callbackName = `translation_jsonp_callback_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+    const callbackName = `translation_jsonp_callback_${jsonpIndex}`;
+    jsonpIndex++;
     script.src = `${url}?${queryString}&callback=${callbackName}`;
 
     // 4. 定义全局回调函数

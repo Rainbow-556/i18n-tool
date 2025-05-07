@@ -8,8 +8,9 @@ const langMap = {
 };
 
 const deepSeekTranslator = {
-  maxTextCountPerReq: 100,
-  maxCharsPerReq: 3000,
+  maxTextCountPerReq: 10000,
+  // 实测并发请求比一次性请求的速度更慢，所以设置qps为1，一次请求很大的数据量
+  maxCharsPerReq: 4000,
   qps: 1,
   putHtmlTextInSeparateChunk: false,
   textDividerCharLength: 0,

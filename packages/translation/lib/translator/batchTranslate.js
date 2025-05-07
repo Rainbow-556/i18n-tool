@@ -54,14 +54,12 @@ async function batchTranslateInner({ originLang, targetLang, textInfos, translat
     const initialReqCount = Math.min(chunks.length, qps);
     let currentChunkIndex = 0;
     function processChunk() {
-      if (currentChunkIndex >= chunks.length) {
-        return;
-      }
       let chunkIndex = currentChunkIndex;
       currentChunkIndex++;
       const chunk = chunks[chunkIndex];
-      // console.log(`开始处理第${chunkIndex + 1}个chunk，chunk总数为${chunks.length}`);
-      // await new Promise(resolve => setTimeout(resolve, 5000));
+      // console.log(
+      //   `开始翻译第${chunkIndex + 1}个chunk(${chunk.length}个词条，目标语言${targetLang})，chunk总数为${chunks.length}`
+      // );
       translator
         .translate({
           originLang,
@@ -85,7 +83,7 @@ async function batchTranslateInner({ originLang, targetLang, textInfos, translat
           // console.log(`第${chunkIndex + 1}个chunk结束`);
           if (completedCount === chunks.length) {
             resolve({ translationResults });
-          } else {
+          } else if (currentChunkIndex < chunks.length) {
             processChunk();
           }
         });
