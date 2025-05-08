@@ -54,7 +54,7 @@ import { IndexedDBCache } from './cache/indexedDBCache.js';
 import { MemoryCache } from './cache/memoryCache.js';
 import { Cache } from './cache/index.js';
 import { jsonTargetStringHandler } from '@rainbow556/translation/lib/jsonTargetStringHandler.js';
-import KEY from '../../../lib/key.json';
+import KEY from '../../../key.json';
 // import { useI18n } from "vue-i18n";
 // import { baiduTranslator } from '@rainbow556/i18n-tool/lib/translator/baiduTranslator.mjs';
 // console.log('i18n', i18n.t('hello', { p1: '占位' }));

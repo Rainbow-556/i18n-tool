@@ -1,7 +1,7 @@
-const KEY = require('../../../../lib/key.json');
+const KEY = require('../../../key.json');
 
 async function test() {
-  const { volcEngineTranslator } = await import('../translator/volcEngineTranslator/index.js');
+  const { volcEngineTranslator } = await import('../lib/translator/volcEngineTranslator/index.js');
   volcEngineTranslator.setOptions({
     volcEngineAccessKeyId: KEY.VOLC_ENGINE_ACCESS_KEY_ID,
     volcEngineSecretAccessKey: KEY.VOLC_ENGINE_SECRET_ACCESS_KEY

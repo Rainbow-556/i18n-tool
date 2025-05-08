@@ -11,8 +11,8 @@ const jsonObj = {
 };
 
 async function test() {
-  const { deepTraverse, setValueByPath } = await import('../utils/json.js');
-  const { containsChinese } = await import('../utils/string.js');
+  const { deepTraverse, setValueByPath } = await import('../lib/utils/json.js');
+  const { containsChinese } = await import('../lib/utils/string.js');
   deepTraverse(
     jsonObj,
     (value, path) => {

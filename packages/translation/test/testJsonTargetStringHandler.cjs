@@ -1,4 +1,4 @@
-const KEY = require('../../../../lib/key.json');
+const KEY = require('../../../key.json');
 
 const jsonObj1 = {
   a: 'a',
@@ -39,7 +39,7 @@ const jsonObj = {
 };
 
 async function test() {
-  const { jsonTargetStringHandler } = await import('../jsonTargetStringHandler.js');
+  const { jsonTargetStringHandler } = await import('../lib/jsonTargetStringHandler.js');
   jsonTargetStringHandler.init({
     targetLang: 'en-US',
     translatorName: 'baidu',

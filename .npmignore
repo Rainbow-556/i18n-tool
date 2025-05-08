@@ -1,4 +1,6 @@
 examples/
 .husky/
 node_modules/
-key.json
+.tool-versions
+package-lock.json
+pnpm-lock.yaml

@@ -1,4 +1,4 @@
-const KEY = require('../../lib/key.json');
+const KEY = require('../../key.json');
 
 module.exports = {
   targetLang: {
