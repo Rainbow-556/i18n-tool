@@ -1,8 +1,8 @@
 <template>
   <div id="app">
+    <TestWC />
     <div>current lang: {{ currentLang }}</div>
     中文中文中文中文
-
     {{ msg }}
     <div class="css-var">{{ `模板字符串${msg}` }}</div>
     英文 中文
@@ -35,6 +35,7 @@ import { i18n } from '@/i18n/index.js';
 import Fake from '@fake-npm/lib/fake.vue';
 import FakeJson from '@fake-npm/lib/fake.json';
 import IndependentBlock from './components/independentBlock/index.vue';
+import TestWC from './components/testWC.vue';
 
 console.log('json', json);
 console.log('FakeJson', FakeJson);
@@ -47,7 +48,8 @@ export default {
   name: 'App',
   components: {
     Fake,
-    IndependentBlock
+    IndependentBlock,
+    TestWC
   },
   data() {
     return {

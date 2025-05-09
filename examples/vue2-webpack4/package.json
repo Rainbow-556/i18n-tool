@@ -16,6 +16,8 @@
     "merge": "i18n-tool merge"
   },
   "dependencies": {
+    "@rainbow556/vue-web-component": "0.0.1-beta.4",
+    "@shoelace-style/shoelace": "^2.20.1",
     "core-js": "^3.6.5",
     "vue": "2.6.10",
     "vue-i18n": "^8.28.2",
