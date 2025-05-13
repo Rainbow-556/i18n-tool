@@ -18,8 +18,7 @@
   },
   "dependencies": {
     "@rainbow556/translation": "0.0.1-beta.3",
-    "@rainbow556/vue-web-component": "0.0.1-beta.3",
-    "@shoelace-style/shoelace": "^2.20.1",
+    "@rainbow556/vue-web-component": "0.0.1-beta.6",
     "axios": "^1.8.4",
     "element-plus": "^2.9.5",
     "pinia": "^3.0.1",

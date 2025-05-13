@@ -8,8 +8,14 @@
     </a>
   </div>
   <!-- <wc-view1></wc-view1> -->
-  <wc-view2 ref="view2Ref" :msg="view2Msg" @btn-click="onView2BtnClick">
-    <div slot="name">具名</div>
+  <wc-view2
+    ref="view2Ref"
+    :msgText.prop="msgText"
+    :objProperty.prop="objProperty"
+    :arrayProperty.prop="arrayProperty"
+    @btnClick="onView2BtnClick"
+  >
+    <div class="msg" slot="name">具名</div>
     <div>默认</div>
   </wc-view2>
   <div>
@@ -60,13 +66,16 @@ import { MemoryCache } from './cache/memoryCache.js';
 import { Cache } from './cache/index.js';
 import { jsonTargetStringHandler } from '@rainbow556/translation/lib/jsonTargetStringHandler.js';
 import KEY from '../../../key.json';
-import '@rainbow556/vue-web-component/wc-view1';
-import '@rainbow556/vue-web-component/wc-view2';
+// import '@rainbow556/vue-web-component/wc-view1';
+// import '@rainbow556/vue-web-component/wc-view2';
+import { registerView2, service } from '@rainbow556/vue-web-component';
 // import { useI18n } from "vue-i18n";
 // import { baiduTranslator } from '@rainbow556/i18n-tool/lib/translator/baiduTranslator.mjs';
 // console.log('i18n', i18n.t('hello', { p1: '占位' }));
 
 // console.log('cjs run', generateKey('test'));
+registerView2();
+console.log('service.getName()', service.getName());
 
 const test = ref('123');
 const b = computed(() => {
@@ -99,13 +108,24 @@ const indexedDBCache = new IndexedDBCache({ maxItems: 3 });
 const memoryCache = new MemoryCache({ maxItems: 3 });
 const cache = new Cache({ maxItems: 3 });
 
-const view2Msg = ref('你好');
 let i = 0;
+const msgText = ref('你好');
+const objPros = ref({
+  a: 1,
+  b: 2
+});
+const arrayProperty = ref([i]);
+const objProperty = ref({ c: i });
 function onView2BtnClick(e) {
   console.log('onView2BtnClick', e);
-  console.log('view2Msg', view2Msg.value);
-  view2Msg.value = '你好' + i++;
+  i++;
+  msgText.value = '你好' + i;
   console.log('view2Ref.getCount()', view2Ref.value.getCount());
+  objPros.value.a = i;
+  arrayProperty.value.push(i);
+  // view2Ref.value.setObjPros(objPros);
+  // view2Ref.value.setArrayPros(arrayPros);
+  objProperty.value.c = i;
 }
 const view2Ref = ref(null);
 
@@ -240,5 +260,8 @@ function onTranslateBtnClick() {
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+.msg {
+  color: yellow;
 }
 </style>

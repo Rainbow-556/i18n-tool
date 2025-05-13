@@ -1,3 +1,4 @@
+const path = require('path');
 const I18nToolWebpackPlugin = require('@rainbow556/i18n-tool/lib/plugin/webpack/plugin.cjs');
 
 module.exports = {
@@ -6,11 +7,7 @@ module.exports = {
     plugins: [new I18nToolWebpackPlugin()],
     resolve: {
       alias: {
-        // '@rainbow556/vue-web-component/wc-view1': resolve('node_modules/@rainbow556/vue-web-component/dist/wc-view1.js'),
-        // '@rainbow556/vue-web-component/wc-view2': resolve('node_modules/@rainbow556/vue-web-component/dist/wc-view2.js')
-        // '@rainbow556/vue-web-component/wc-view2': resolve('../../abroad-middle/vue-web-component/dist/wc-view2.js')
-        '@rainbow556/vue-web-component/wc-view2':
-          '/Users/lexin/Desktop/my/work/projects/abroad-middle/vue-web-component/dist/wc-view2.js'
+        '@rainbow556/vue-web-component/css': path.resolve('node_modules/@rainbow556/vue-web-component/dist/index.css')
       }
     },
     optimization: {

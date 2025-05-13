@@ -3,8 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@rainbow556/i18n-tool': 0.0.1-beta.11
   '@rainbow556/translation': 0.0.1-beta.3
-  '@rainbow556/vue-web-component': 0.0.1-beta.3
-  '@shoelace-style/shoelace': ^2.20.1
+  '@rainbow556/vue-web-component': 0.0.1-beta.6
   '@vitejs/plugin-vue': ^5.2.1
   axios: ^1.8.4
   element-plus: ^2.9.5
@@ -17,8 +16,7 @@ specifiers:
 
 dependencies:
   '@rainbow556/translation': 0.0.1-beta.3
-  '@rainbow556/vue-web-component': link:../../../vue-web-component
-  '@shoelace-style/shoelace': 2.20.1
+  '@rainbow556/vue-web-component': 0.0.1-beta.6
   axios: 1.8.4
   element-plus: 2.9.7_vue@3.5.13
   pinia: 3.0.1_vue@3.5.13
@@ -1014,6 +1012,18 @@ packages:
       crypto-js: 4.2.0
     transitivePeerDependencies:
       - debug
+
+  /@rainbow556/vue-web-component/0.0.1-beta.6:
+    resolution: {integrity: sha512-jiEn0Dzn5+IAtZj0IzzS+mHw/IOYduLK2Cgg2cdAPitDKbtmWuOIqco31VRFK91Wsj6ANvZ1/F/jCyUfzwIyWA==}
+    dependencies:
+      '@shoelace-style/shoelace': 2.20.1
+      dayjs: 1.11.13
+      vue: 3.5.13
+    transitivePeerDependencies:
+      - '@floating-ui/utils'
+      - '@types/react'
+      - typescript
+    dev: false
 
   /@rollup/rollup-android-arm-eabi/4.39.0:
     resolution: {integrity: sha512-lGVys55Qb00Wvh8DMAocp5kIcaNzEFTmGhfFd88LfaogYTRKrdxgtlO5H6S49v2Nd8R2C6wLOal0qv6/kCkOwA==}

@@ -44,5 +44,19 @@
   "113834447086b64b12c4199b6547b0af": "Field A",
   "46cb9bdaebc3b13ebc1828e979df59c3": "ComputedB {p0}",
   "3b4503bbb1371bd8b9c054a2ff4da8a0": "Method B {p0}",
-  "130a6ae3b45259e3fdc1bbd1ad914339": "From. cjs {p0} {p1}"
+  "130a6ae3b45259e3fdc1bbd1ad914339": "From. cjs {p0} {p1}",
+  "dc17a34f6fa1afa765782e79543014fb": "From fake data {p5}, and {p0}",
+  "399d7b6ea7d68ffb74b28ba1a2c491be": "From fake data {p6}, and {p0}",
+  "160446215396993c9efdf68ced2180d7": "From fake data {p7}, and {p0}",
+  "cbae06191b6956735476fb287fa80df3": "From fake data {p8}, and {p0}",
+  "189690e7b041758b3ea28865632c750a": "From fake data {p9}, and {p0}",
+  "060149901601e2f0ef5ed1598f0bf529": "put one's name to a document",
+  "18c63459a2c069022c7790430f761214": "default",
+  "7eca689f0d3389d9dea66ae112e5cfd7": "hello",
+  "571a0ed582215e091829d54084e899c7": "Hello {p0}",
+  "bde8db5aca50d2e14c8fc54051005c03": "From fake data {p1}, and {p0}",
+  "42de5f60ae9d0538d8b8700b839d6ed8": "From fake data {p2}, and {p0}",
+  "40989b5fe0ca586cfbe853b58bc2d5a0": "From fake data {p3}, and {p0}",
+  "e4131dc8993300ca133c6256d4588506": "From fake data {p4}, and {p0}",
+  "de08b625565eab50dcf977f71ec3e63b": "From fake data {p10}, and {p0}"
 }

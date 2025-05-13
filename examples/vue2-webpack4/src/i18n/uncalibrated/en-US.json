@@ -1,5 +1,4 @@
 {
-  "846d79ea71304e68c2c6cf48a8ad8028": "Chinese Chinese Chinese 2 {p0}",
   "7d648b374134d2f2735fdf3898657346": "Template string {p0}",
   "5f2d66d99b37a6d869c6b2f5d86102fc": "English Chinese",
   "46c68f4038b0721fe1b7a706ef09135b": "The generateKey of cjs",
@@ -19,15 +18,11 @@
   "f6da36b54ab04addfe0435f8753d5ebe": "Fake's message",
   "97d9ccfa511ca67c9c26b078313294df": "Fake's created hook",
   "15b053cf2354596aad8d964a71185db9": "Switch {p0}",
-  "d6703c346c4de74354eaedaddb5f13b9": "Copywriting 3",
   "20414fc5b9c3eb7b5853f58f02bcbf49": "Chinese Chinese Chinese Chinese {p0}",
   "97950225538e4008e2e8ae0071931b81": "whatever",
-  "143d23cfd4e7338623cadd96f53500d2": "Any 1",
-  "881f0390ecff710dfa1d50c4a1c92229": "Copywriting 31",
   "0654582450a7134d06614de8be05fe2b": "Copywriting 312",
   "6655f9dc1e061793148b1270b5f37199": "Test WC components",
   "060149901601e2f0ef5ed1598f0bf529": "put one's name to a document",
   "18c63459a2c069022c7790430f761214": "default",
-  "867960acf138eb9c4f294821e956e767": "{p0}, Initial inventory is greater than remaining inventory",
   "571a0ed582215e091829d54084e899c7": "Hello {p0}"
 }
