@@ -103,6 +103,80 @@ const volcEngineTranslator = {
         )}个字符，耗时${((Date.now() - time) / 1000).toFixed(2)}秒`
       );
     }
+  },
+  /** 语种检测，支持140+语种，官方文档说目前是免费调用 */
+  async langDetect({ texts }) {
+    const { volcEngineAccessKeyId, volcEngineSecretAccessKey } = this.options;
+    // api凭证
+    const credentials = new Credentials(volcEngineAccessKeyId, volcEngineSecretAccessKey, 'translate', 'cn-north-1');
+    // 设置请求的 header、query、body
+    const header = new Request.Header({ 'Content-Type': 'application/json' });
+    const query = new Request.Query({ Action: 'LangDetect', Version: '2020-06-01' });
+    const body = new Request.Body({
+      TextList: texts
+    });
+    // 设置 service、api信息
+    const serviceInfo = new ServiceInfo('translate.volcengineapi.com', header, credentials);
+    const apiInfo = new ApiInfo('POST', '/', query, body);
+    // 生成 API
+    const api = API(serviceInfo, apiInfo);
+
+    const time = Date.now();
+    let success = false;
+    let errCode;
+    let errMsg;
+    try {
+      const response = await axios.post(api.url, api.params, { ...api.config, timeout: 15000 });
+      // console.log('response.data');
+      // console.log(JSON.stringify(response.data, null, 2));
+      // 格式
+      // const data = {
+      //   ResponseMetadata: {
+      //     Error: {
+      //       Code: 'InvalidSign',
+      //       Message: 'Invalid Sign'
+      //     }
+      //   },
+      //   DetectedLanguageList: [
+      //     {
+      //       Language: 'en',
+      //       Confidence: 1
+      //     }
+      //   ]
+      // };
+      const { ResponseMetadata, DetectedLanguageList } = response.data;
+      const { Code, Message } = ResponseMetadata.Error || {};
+      errCode = Code;
+      errMsg = Message;
+      if (errCode == undefined && DetectedLanguageList) {
+        success = true;
+        return {
+          detectionResults: DetectedLanguageList.map(item => ({ lang: item.Language, confidence: item.Confidence }))
+        };
+      }
+      return Promise.reject({ errCode, errMsg });
+    } catch (e) {
+      errMsg = e.message || 'network error';
+      if (e.response) {
+        // 请求成功发出且服务器也响应了状态码，但状态代码超出了 2xx 的范围
+        errCode = e.response.status;
+        errMsg = e.response.statusText;
+      } else if (e.request) {
+        // 请求已经成功发起，但没有收到响应
+        errCode = -1;
+      } else {
+        // 发送请求时出了点问题
+        errCode = -2;
+      }
+      return Promise.reject({ errCode: String(errCode), errMsg });
+    } finally {
+      console.log(
+        `语种检测[${success ? '成功' : `失败 errCode=${errCode}, errMsg=${errMsg}`}] ${texts.length}个文本，耗时${(
+          (Date.now() - time) /
+          1000
+        ).toFixed(2)}秒`
+      );
+    }
   }
 };
 

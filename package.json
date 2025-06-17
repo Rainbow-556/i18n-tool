@@ -37,6 +37,8 @@
     "commander": "13.1.0",
     "crypto-js": "4.2.0",
     "exceljs": "4.4.0",
+    "franc": "^6.2.0",
+    "languagedetect": "^2.0.0",
     "micromatch": "4.0.8",
     "typescript": "5.8.2"
   },
