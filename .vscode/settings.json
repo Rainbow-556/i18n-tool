@@ -1,5 +1,5 @@
 {
-  "i18n-ally.localesPaths": [
-    "examples/vue3-vite6/src/i18n"
-  ]
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "i18n-ally.localesPaths": ["examples/vue3-vite6/src/i18n"]
 }
