@@ -1,18 +1,29 @@
 {
-  "name": "vue2-vite6",
+  "name": "vue2-vite4",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "dev": "node node_modules/@rainbow556/i18n-tool/lib/script/execBuild.cjs --PKG_MANAGER pnpm --BUILD_COMMAND raw-dev",
+    "raw-dev": "vite",
+    "build": "node node_modules/@rainbow556/i18n-tool/lib/script/execBuild.cjs --PKG_MANAGER pnpm --BUILD_COMMAND raw-build",
+    "raw-build": "vite build",
+    "stats": "i18n-tool stats",
+    "extract": "i18n-tool extract"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@vitejs/plugin-vue2": "^2.3.3",
+    "@vitejs/plugin-vue2-jsx": "^1.1.1",
+    "less": "^4.3.0",
+    "sass": "^1.89.2",
     "vite": "^4.5.14",
-    "vite-plugin-vue2": "^2.0.3",
+    "vite-plugin-html": "^3.2.2",
     "vue": "^2.7.16"
+  },
+  "dependencies": {
+    "vue-i18n": "8"
   }
 }

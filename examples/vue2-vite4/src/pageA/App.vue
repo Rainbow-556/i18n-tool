@@ -1,17 +1,27 @@
 <template>
   <div id="app">
+    <h1>Page A</h1>
     <h1>Hello, Vue 2 with Vite!</h1>
     <p>This is a Vue 2 project powered by Vite.</p>
+    <JSX icon="icon" title="中文" />
+    <HtmlView />
   </div>
 </template>
 
 <script>
+import JSX from './jsx.vue';
+import HtmlView from './htmlView/index.vue';
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    JSX,
+    HtmlView
+  }
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19,5 +29,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  h1 {
+    background-color: pink;
+  }
 }
 </style>
