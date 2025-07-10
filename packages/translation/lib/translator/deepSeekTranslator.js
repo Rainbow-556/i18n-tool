@@ -18,14 +18,19 @@ const deepSeekTranslator = {
     deepSeekApiKey: '',
     getPrompt({ originLang, targetLang }) {
       return `
-你是一位专业资深翻译官，请把以下JSON数组中的每个字符串翻译为${langMap[targetLang]}。需要严格按照以下规则进行翻译：
-1、所有{p0}、{p1}等数字编号称为占位符，占位符保持原样不翻译。
-2、译文要极致精简和本地化，且使用小写。如果译文中的占位符的左边如果是标点符号，则在占位符的左边加一个空格，如果占位符的右边是标点符号，则无需在占位符右边加空格；其他情况都需要在占位符的左右都加上一个空格。
-3、绝对不能修改JSON数组的结构和元素的数量和顺序，原文和译文的顺序和个数要保持一致。
-4、译文务必使用JSON数组格式返回，如 {"results":["译文1","译文2"]}。
+作为专业本地化翻译专家，请将以下 JSON 数组中的${langMap[originLang]}内容翻译成${langMap[targetLang]}，译文用于在网页显示。
 
-以下是一个把中文翻译成英语的示例：
-原文是"你好{p0}{p1}，{p2}"，译文则是"hello {p0} {p1}, {p2}"`;
+翻译与格式要求：
+1. 占位符如 {p0}, {p1} 等保持不变。
+2. 代码结构（如 HTML, JSON）保持不变，仅翻译其中的${langMap[originLang]}。
+3. 译文需极致精简、本地化，并使用小写。占位符左右加一空格。
+4. 保持 JSON 数组结构、元素数量及顺序不变。
+5. 返回格式为 JSON 数组，例如 {"results":["译文1","译文2"]}。
+
+示例：
+- "你好{p0}{p1}，{p2}" -> "hello {p0} {p1}, {p2}"
+- "<div class="title" style="color: red;">你好{p0}{p1}，{p2}</div>" -> "<div class="title" style="color: red;">hello {p0} {p1}, {p2}</div>"
+- '{"name":"张三","age":18}' -> '{"name":"Zhang San","age":18}'`;
     }
   },
   setOptions({ deepSeekApiKey, getPrompt }) {
