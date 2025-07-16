@@ -23,14 +23,14 @@ const deepSeekTranslator = {
 翻译与格式要求：
 1. 占位符如 {p0}, {p1} 等保持不变。
 2. 代码结构（如 HTML, JSON）保持不变，仅翻译其中的${langMap[originLang]}。
-3. 译文需极致精简、本地化，并使用小写。占位符左右加一空格。
-4. 保持 JSON 数组结构、元素数量及顺序不变。
-5. 返回格式为 JSON 数组，例如 {"results":["译文1","译文2"]}。
+3. 译文必须极致精简、本地化，并使用小写。占位符左右加一空格。
+4. 必须保持 JSON 数组结构、元素数量及顺序不变。
+5. 必须返回格式为 JSON 数组，例如 {"results":["译文1","译文2"]}。
 
 示例：
-- "你好{p0}{p1}，{p2}" -> "hello {p0} {p1}, {p2}"
-- "<div class="title" style="color: red;">你好{p0}{p1}，{p2}</div>" -> "<div class="title" style="color: red;">hello {p0} {p1}, {p2}</div>"
-- '{"name":"张三","age":18}' -> '{"name":"Zhang San","age":18}'`;
+- "你好11{p0}{p1}，{p2}世界2" -> "hello 11 {p0} {p1}, {p2} world 2"
+- "<div class="title" style="color: red;">你好33{p0}{p1}，{p2}</div>" -> "<div class="title" style="color: red;">hello 33 {p0} {p1}, {p2}</div>"
+- '{"name":"优惠券已过期22","age":18}' -> '{"name":"coupon expired 22","age":18}'`;
     }
   },
   setOptions({ deepSeekApiKey, getPrompt }) {
